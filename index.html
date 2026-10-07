@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="南疆行程">
 <meta name="theme-color" content="#0e1015">
-<title>金秋南疆 18天 深度考察 · 互動行程</title>
+<title>金秋南疆 18天 深度全景 · 互動行程</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
@@ -31,7 +31,7 @@ header h1{font-size:1.35rem;font-weight:700;letter-spacing:.5px}
 header h1 span{color:var(--gold)}
 header .sub{color:var(--muted);font-size:.85rem}
 
-/* NEW TABS STYLING */
+/* TABS STYLING */
 #tabsContainer { position:sticky; top:0; background:var(--bg); z-index:1000; border-bottom:1px solid var(--line); }
 #tabsControls { display:flex; align-items:center; padding:10px 26px; gap:8px; transition:0.2s ease-in-out; }
 #tabsControls.collapsed { display:none !important; }
@@ -43,7 +43,6 @@ header .sub{color:var(--muted);font-size:.85rem}
 body.light .scroll-arrow { background:var(--panel); color:var(--text); }
 
 .tab{flex-shrink:0; background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px 14px;cursor:pointer;font-size:.88rem;transition:.15s}
-/* ENHANCED TAB DESCRIPTION */
 .tab small{display:block;color:#cdd2dc;font-size:.82rem;font-weight:600;margin-top:3px;}
 body.light .tab small{color:#4a4d55;}
 .tab:hover{border-color:var(--gold)}
@@ -171,6 +170,7 @@ body.light .pdf-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
   <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
     <span class="sub" style="margin-right:10px;">費用：15人以上報價 NT$117,400</span>
     <button class="tool" id="toggleTabsBtn">👁️ 隱藏導覽</button>
+    <button class="tool" id="hotelFilterBtn">🏨 僅顯住宿</button>
     <button class="tool" id="themeBtn">☀️ 日間模式</button>
     <button class="tool" id="expBtn">⬇ 匯出</button>
     <button class="tool" id="impBtn">⬆ 匯入</button>
@@ -249,24 +249,24 @@ body.light .pdf-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
           <tr><th>天數</th><th>日期/航班</th><th>行程內容</th><th>餐食</th><th>住宿</th></tr>
         </thead>
         <tbody>
-          <tr><td>01</td><td>10/22 桃園飛北京 CA186<br>北京飛烏魯木齊 CA1295</td><td>接機後送回酒店。<br>車程時間:烏魯木齊機場→(約20KM)烏魯木齊市區</td><td>機上餐<br>機場簡餐</td><td>希爾頓花園酒店 或同級</td></tr>
-          <tr><td>02</td><td>10/23 烏魯木齊 - 庫爾勒</td><td>新疆古生態園(硅化木保護基地、野馬美術館、汗血寶馬基地)、穿越天山勝利隧道<br>車程時間:烏魯木齊→(約330KM)庫爾勒</td><td>早:酒店內<br>午:中式 60<br>晚:西域迎賓宴 100</td><td>山水梨城賓館 或同級</td></tr>
-          <tr><td>03</td><td>10/24 庫爾勒</td><td>羅布人村寨(含區間車)、塔克拉瑪幹沙漠風光、沙漠胡楊風光、體驗沙漠騎駱駝<br>車程時間:庫爾勒→(約80KM)羅佈人村寨</td><td>早:酒店內<br>午:中式 60<br>晚:梨城風味 80</td><td>山水梨城賓館 或同級</td></tr>
-          <tr><td>04</td><td>10/25 庫爾勒 - 庫車</td><td>塔里木胡楊林公園(含區間車)、沙漠胡楊風光<br>車程時間:庫爾勒→(約220KM)塔里木胡楊林→(約140KM)庫車</td><td>早:酒店內<br>午:中式 60<br>晚:龜茲風味 80</td><td>庫車迎賓館 或同級</td></tr>
-          <tr><td>05</td><td>10/26 庫車</td><td>天山神秘大峽谷、熱斯坦街(安排下午茶)、庫車大馕城(博物館、打饢體驗、樂舞表演)</td><td>早:酒店內<br>午:中式 60<br>晚:亞克西姆風味 100</td><td>庫車迎賓館 或同級</td></tr>
+          <tr><td>01</td><td>10/22 桃園飛北京 CA186<br>北京飛烏魯木齊 CA1295<br>1735/2155</td><td>接機後送回酒店。<br>車程時間:烏魯木齊機場→(約20KM)烏魯木齊市區</td><td>機上餐<br>接機水果餐盒+新疆饢餅</td><td>希爾頓花園/希爾頓歡朋/美豪麗致酒店-旗艦店 或同級</td></tr>
+          <tr><td>02</td><td>10/23 烏魯木齊 - 庫爾勒</td><td>新疆古生態園(硅化木保護基地、野馬美術館、汗血寶馬基地)、穿越天山勝利隧道<br>車程時間:烏魯木齊→(約330KM)庫爾勒</td><td>早:酒店內<br>午:中式 60<br>晚:西域迎賓宴 100</td><td>山水梨城賓館 / 庫爾勒萬怡酒店 或同級</td></tr>
+          <tr><td>03</td><td>10/24 庫爾勒</td><td>羅布人村寨(含區間車)、塔克拉瑪幹沙漠風光、沙漠胡楊風光、體驗沙漠騎駱駝<br>車程時間:庫爾勒→(約80KM)羅佈人村寨</td><td>早:酒店內<br>午:中式 60<br>晚:梨城風味 80</td><td>山水梨城賓館 / 庫爾勒萬怡酒店 或同級</td></tr>
+          <tr><td>04</td><td>10/25 庫爾勒 - 庫車</td><td>塔里木胡楊林公園(含區間車)、沙漠胡楊風光<br>車程時間:庫爾勒→(約220KM)塔里木胡楊林→(約140KM)庫車</td><td>早:酒店內<br>午:中式 60<br>晚:龜茲風味 80</td><td>庫車迎賓館 / 庫車飯店五星樓 / 希爾頓惠庭酒店 或同級</td></tr>
+          <tr><td>05</td><td>10/26 庫車</td><td>天山神秘大峽谷、熱斯坦街(安排下午茶)、庫車大馕城(博物館、打饢體驗、樂舞表演)</td><td>早:酒店內<br>午:中式 60<br>晚:亞克西姆風味 100</td><td>庫車迎賓館 / 庫車飯店五星樓 / 希爾頓惠庭酒店 或同級</td></tr>
           <tr><td>06</td><td>10/27 庫車 - 拜城</td><td>庫車王府、克孜爾千佛洞(含專業講解)<br>車程時間:庫車→(約70KM)千佛洞→(約80KM)拜城</td><td>早:酒店內<br>午:中式 60<br>晚:拜城風味 80</td><td>拜城尊茂溫州酒店 或同級</td></tr>
-          <tr><td>07</td><td>10/28 拜城 - 阿拉爾</td><td>溫宿大峽谷(含區間車)<br>車程時間:拜城→(約130KM)大峽谷→(約140KM)阿拉爾</td><td>早:酒店內<br>午:中式 60<br>晚:新疆烤包子 80</td><td>塔河花園酒店 或同級</td></tr>
-          <tr><td>08</td><td>10/29 阿拉爾 - 和田</td><td>沿第二條沙漠公路穿越塔克拉瑪幹沙漠、沙漠胡楊風光、和田夜市<br>車程時間:阿拉爾→(約440KM)和田</td><td>早:酒店內<br>午:途中 60<br>晚:和田夜市發餐費 100</td><td>和田迎賓館 或同級</td></tr>
-          <tr><td>09</td><td>10/30 和田 - 澤普/莎車</td><td>澤普金胡楊國家森林公園(含區間車)<br>車程時間:和田→(約320KM)金胡楊→(約35KM)澤普</td><td>早:酒店內<br>午:中式 60<br>晚:紅柳烤肉 80</td><td>澤普金胡楊國際酒店 或同級</td></tr>
-          <tr><td>10</td><td>10/31 澤普/莎車 - 巴楚</td><td>莎車喀讚其老街、莎車王陵、巴楚紅海景區(含區間車)、水上胡楊風光</td><td>早:酒店內<br>午:中式 60<br>晚:巴楚烤魚風味 80</td><td>巴楚麗楓酒店 或同級</td></tr>
-          <tr><td>11</td><td>11/1 巴楚 - 喀什</td><td>沿途欣賞戈壁風光、高台民居、香妃園、汗巴扎夜市<br>車程時間:巴楚→(約300KM)喀什</td><td>早:酒店內<br>午:中式 60<br>晚:汗巴扎夜市發餐費 100</td><td>古城逸扉酒店 或同級</td></tr>
-          <tr><td>12</td><td>11/2 喀什 - 烏恰</td><td>喀什古城開城儀式、喀什古城、職人街、彩虹巷、百年老茶館、艾提尕爾清真寺</td><td>早:酒店內<br>午:中式 60<br>晚:新疆手抓肉 80</td><td>美豪麗致酒店 或同級</td></tr>
-          <tr><td>13</td><td>11/3 烏恰西极村 - 喀什</td><td>途徑七彩丹霞地貌、貝殼山、烏恰天山昆侖山交匯觀景臺、斯木哈納村(中國西極石碑)</td><td>早:酒店內<br>午:途中 60<br>晚:新疆烤全羊 180</td><td>古城逸扉酒店 或同級</td></tr>
-          <tr><td>14</td><td>11/4 喀什 - 塔什庫爾幹</td><td>蓋孜峽谷風光、中巴友誼公路、卡拉庫里湖、遠眺帕米爾高原雪山群、石頭城、金草灘</td><td>早:酒店內<br>午:途中 60<br>晚:高原牦牛肉 100</td><td>塔縣般藍酒店 或同級</td></tr>
-          <tr><td>15</td><td>11/5 塔縣</td><td>盤龍古道(換乘7座商務車,5人/車)、班底兒藍湖、托格倫夏村、塔吉克族家訪</td><td>早:酒店內<br>午:途中 60<br>晚:塔吉克風味 80</td><td>塔縣般藍酒店 或同級</td></tr>
+          <tr><td>07</td><td>10/28 拜城 - 阿拉爾</td><td>溫宿大峽谷(含區間車)<br>車程時間:拜城→(約130KM)大峽谷→(約140KM)阿拉爾</td><td>早:酒店內<br>午:中式 60<br>晚:新疆烤包子 80</td><td>塔河花園 / 塔河觀瀾 / 桉漫君悅酒店 或同級</td></tr>
+          <tr><td>08</td><td>10/29 阿拉爾 - 和田</td><td>沿第二條沙漠公路穿越塔克拉瑪幹沙漠、沙漠胡楊風光、和田夜市<br>車程時間:阿拉爾→(約440KM)和田</td><td>早:酒店內<br>午:途中 60<br>晚:和田夜市發餐費 100</td><td>和田迎賓館 / 希爾頓歡朋酒店 或同級</td></tr>
+          <tr><td>09</td><td>10/30 和田 - 澤普/莎車</td><td>澤普金胡楊國家森林公園(含區間車)<br>車程時間:和田→(約320KM)金胡楊→(約35KM)澤普</td><td>早:酒店內<br>午:中式 60<br>晚:紅柳烤肉 80</td><td>澤普金胡楊國際 / 莎車雲上居 / 莎車亞朵酒店 或同級</td></tr>
+          <tr><td>10</td><td>10/31 澤普/莎車 - 巴楚</td><td>莎車喀讚其老街、莎車王陵、巴楚紅海景區(含區間車)、水上胡楊風光</td><td>早:酒店內<br>午:中式 60<br>晚:巴楚烤魚風味 80</td><td>巴楚麗楓 / 巴楚全季 / 巴楚錦疆酒店 或同級</td></tr>
+          <tr><td>11</td><td>11/1 巴楚 - 喀什</td><td>沿途欣賞戈壁風光、高台民居、香妃園、汗巴扎夜市<br>車程時間:巴楚→(約300KM)喀什</td><td>早:酒店內<br>午:中式 60<br>晚:汗巴扎夜市發餐費 100</td><td>古城逸扉 / 東城假日 / 希爾頓惠庭酒店 或同級</td></tr>
+          <tr><td>12</td><td>11/2 喀什 - 烏恰</td><td>喀什古城開城儀式、喀什古城、職人街、彩虹巷、百年老茶館、艾提尕爾清真寺</td><td>早:酒店內<br>午:中式 60<br>晚:新疆手抓肉 80</td><td>美豪麗致酒店 / 維也納酒店 或同級</td></tr>
+          <tr><td>13</td><td>11/3 烏恰西极村 - 喀什</td><td>途徑七彩丹霞地貌、貝殼山、烏恰天山昆侖山交匯觀景臺、斯木哈納村(中國西極石碑)</td><td>早:酒店內<br>午:途中 60<br>晚:新疆烤全羊 180</td><td>古城逸扉 / 希爾頓歡朋 / 希爾頓惠庭酒店 或同級</td></tr>
+          <tr><td>14</td><td>11/4 喀什 - 塔什庫爾幹</td><td>蓋孜峽谷風光、中巴友誼公路、卡拉庫里湖、遠眺帕米爾高原雪山群、石頭城、金草灘</td><td>早:酒店內<br>午:途中 60<br>晚:高原牦牛肉 100</td><td>塔縣般藍酒店 / 全景星空酒店 或同級</td></tr>
+          <tr><td>15</td><td>11/5 塔縣</td><td>盤龍古道(換乘7座商務車,5人/車)、班底兒藍湖、托格倫夏村、塔吉克族家訪</td><td>早:酒店內<br>午:途中 60<br>晚:塔吉克風味 80</td><td>塔縣般藍酒店 / 全景星空酒店 或同級</td></tr>
           <tr><td>16</td><td>11/6 塔什庫爾幹 - 喀什</td><td>塔合曼濕地觀景台、布倫口白沙湖<br>車程時間:塔什庫爾幹→盤龍古道環線→(約130KM)白沙湖→(約150KM)喀什</td><td>早:酒店內<br>午:途中 60<br>晚:西域歡送宴 100</td><td>喀什機場亞朵酒店 或同級</td></tr>
-          <tr><td>17</td><td>11/7 喀什飛北京 CA1216</td><td>早餐後乘機前往北京。<br>車程時間:喀什市區→(約10KM)喀什機場</td><td>早:酒店內<br>午:機上餐<br>晚:風味餐</td><td>北京機場附近酒店</td></tr>
-          <tr><td>18</td><td>11/8 北京飛台北 CA189</td><td>輕鬆早餐,逛附近祥雲歐式小鎮後,送機</td><td>早:酒店內<br>午:機上餐</td><td>溫暖的家</td></tr>
+          <tr><td>17</td><td>11/7 喀什飛北京 CA1216<br>2045/0145+1</td><td>早餐後自由活動，依航班乘機前往北京。<br>車程時間:喀什市區→(約10KM)喀什機場</td><td>早:酒店內<br>午:風味餐<br>晚:風味餐</td><td>北京機場附近酒店</td></tr>
+          <tr><td>18</td><td>11/8 北京飛台北 CA189<br>1355/1720</td><td>早餐後送機返回台北。</td><td>早:酒店內<br>午:機上餐</td><td>溫暖的家</td></tr>
         </tbody>
       </table>
     </div>
@@ -286,272 +286,349 @@ body.light .pdf-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
+/* ========================================================= 
+   APP INITIALIZATION (Maximum Compatibility Version) 
+========================================================= */
+(function() {
+  try {
+
 /* ============ DATA ============ */
 const DAYS = [
 { id:0, date:"10/22", dow:"Day 1", theme:"啟程：TPE - PEK (轉機) - URC", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 接機簡餐/機上餐 | 機票: 含(內扣25,000)",
   notices:[
     "去程航班：TPE 桃園出發，PEK 北京（Layover 中轉），最終抵達 URC 烏魯木齊",
     "航班 1：CA186 1300/1615 (桃園 TPE → 北京 PEK)",
-    "航班 2：CA1295 2015/0030+1 (北京 PEK → 烏魯木齊 URC)"
+    "航班 2：CA1295 1735/2155 (北京 PEK → 烏魯木齊 URC)"
   ],
   stops:[
     {t:"13:00", name:"桃園機場 (TPE) 出發", type:"other", icon:"✈️", coords:[25.0796, 121.2342], wiki:"桃园国际机场", url:"https://www.taoyuan-airport.com", desc:"搭乘 CA186 航班，大約 13:00 從桃園機場出發前往北京。"},
-    {t:"16:15", name:"北京首都機場 (PEK) 轉機", type:"other", icon:"🛫", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"抵達北京作為中轉城市 (Layover)，準備轉搭晚間 20:15 的 CA1295 飛往最終目的地烏魯木齊。"},
-    {t:"23:55", name:"烏魯木齊機場 (URC) 抵達", type:"other", icon:"🛬", coords:[43.9071, 87.4743], wiki:"乌鲁木齐地窝堡国际机场", desc:"深夜抵達烏魯木齊機場，辦理入境與接機手續。"},
-    {t:"23:59", name:"希爾頓花園酒店 (或同級准5星)", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], url:"https://baike.baidu.com/item/乌鲁木齐", desc:"車程時間：烏魯木齊機場→(約20KM)烏魯木齊市區。抵達並辦理入住。"}
+    {t:"16:15", name:"北京首都機場 (PEK) 轉機", type:"other", icon:"🛫", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"抵達北京作為中轉城市 (Layover)，準備轉搭晚間 17:35 的 CA1295 飛往最終目的地烏魯木齊。"},
+    {t:"21:55", name:"烏魯木齊機場 (URC) 抵達", type:"other", icon:"🛬", coords:[43.9071, 87.4743], wiki:"乌鲁木齐地窝堡国际机场", desc:"晚間抵達烏魯木齊機場，辦理入境與接機手續。"},
+    {t:"22:30", name:"希爾頓花園/歡朋/美豪麗致酒店 (准5星)", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], url:"https://baike.baidu.com/item/乌鲁木齐", desc:"車程時間：烏魯木齊機場→(約20KM)烏魯木齊市區。抵達並辦理入住。"}
   ]},
 { id:1, date:"10/23", dow:"Day 2", theme:"新疆古生態園 · 穿越天山", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100西域迎賓宴)",
   notices:["今日將穿越世界最長高速公路隧道：天山勝利隧道"],
   stops:[
-    {t:"09:00", name:"出發：希爾頓花園酒店", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：烏魯木齊酒店", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], desc:"從昨晚入住的酒店出發。"},
     {t:"10:00", name:"新疆古生態園", type:"sight", icon:"🐴", coords:[43.8500, 87.6000], wiki:"阿哈尔捷金马", url:"https://baike.baidu.com/item/新疆古生态园", desc:"參觀侏羅紀硅化木保護基地、野馬美術館與汗血寶馬基地。", sees:["中國規模最大、血統最純正的阿哈爾捷金馬（汗血寶馬）繁育基地", "園內有長達56米的侏羅紀硅化木（樹化石），距今1.95億年至1.3億年"]},
     {t:"14:00", name:"天山勝利隧道 (途經)", type:"sight", icon:"⛰️", coords:[43.1000, 86.8000], wiki:"天山山脉", desc:"穿越天山勝利隧道。車程時間：烏魯木齊市區→(約330KM)庫爾勒市。"},
-    {t:"18:30", name:"山水梨城賓館 (或同級准5星)", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"抵達庫爾勒，享用西域迎賓宴並入住酒店。"}
+    {t:"18:30", name:"山水梨城賓館 / 庫爾勒萬怡酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"抵達庫爾勒，享用西域迎賓宴並入住酒店。"}
   ]},
 { id:2, date:"10/24", dow:"Day 3", theme:"羅布人村寨 · 塔克拉瑪幹沙漠", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80梨城風味)",
   notices:["包含羅布人村寨區間車，並體驗沙漠騎駱駝"],
   stops:[
-    {t:"09:00", name:"出發：山水梨城賓館", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：庫爾勒酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"從昨晚入住的酒店出發。"},
     {t:"11:00", name:"羅布人村寨", type:"sight", icon:"🐪", coords:[41.1641, 86.2453], wiki:"塔克拉玛干沙漠", url:"https://baike.baidu.com/item/罗布人村寨", desc:"包含區間車。塔克拉瑪幹沙漠風光、沙漠胡楊風光、體驗沙漠騎駱駝、孔雀河風光。車程約 80KM。"},
-    {t:"18:00", name:"山水梨城賓館 (或同級准5星)", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"返回庫爾勒市區入住。"}
+    {t:"18:00", name:"山水梨城賓館 / 庫爾勒萬怡酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"返回庫爾勒市區入住。"}
   ]},
 { id:3, date:"10/25", dow:"Day 4", theme:"塔里木胡楊林公園", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80龜茲風味)",
   notices:["長途拉車前往庫車，車程約220KM+140KM"],
   stops:[
-    {t:"09:00", name:"出發：山水梨城賓館", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：庫爾勒酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"從昨晚入住的酒店出發。"},
     {t:"13:00", name:"塔里木胡楊林公園", type:"sight", icon:"🍂", coords:[41.0500, 84.2500], wiki:"胡杨", url:"https://baike.baidu.com/item/塔里木胡杨林国家森林公园", desc:"包含區間車。欣賞沙漠胡楊風光。"},
-    {t:"18:00", name:"庫車迎賓館 (或同級准5星)", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"車程時間：庫爾勒市→(約220KM)塔里木胡楊林公園→(約140KM)庫車市。"}
+    {t:"18:00", name:"庫車迎賓館/五星樓/希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"車程時間：庫爾勒市→(約220KM)塔里木胡楊林公園→(約140KM)庫車市。"}
   ]},
 { id:4, date:"10/26", dow:"Day 5", theme:"天山神秘大峽谷 · 龜茲風情", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100亞克西姆維族風味)",
   notices:["今日安排熱斯坦街下午茶，並欣賞《杏花龜茲》樂舞表演"],
   stops:[
-    {t:"09:00", name:"出發：庫車迎賓館", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：庫車酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
     {t:"10:30", name:"天山神秘大峽谷", type:"sight", icon:"⛰️", coords:[42.1333, 83.0500], wiki:"库车大峡谷", url:"https://baike.baidu.com/item/库车大峡谷国家地质公园", desc:"車程時間：庫車市→(約70KM)天山神秘大峽谷。"},
     {t:"14:00", name:"熱斯坦街 & 庫車大馕城", type:"sight", icon:"🫓", coords:[41.7100, 82.9300], wiki:"馕", url:"https://baike.baidu.com/item/库车大馕城", desc:"安排下午茶。遊覽大馕城博物館、打饢體驗、欣賞《杏花龜茲》樂舞表演。"},
-    {t:"18:30", name:"庫車迎賓館 (或同級准5星)", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"返回庫車市區入住。"}
+    {t:"18:30", name:"庫車迎賓館/五星樓/希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"返回庫車市區入住。"}
   ]},
 { id:5, date:"10/27", dow:"Day 6", theme:"克孜爾千佛洞 · 庫車王府", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80拜城風味)",
   notices:["克孜爾千佛洞包含專業講解"],
   stops:[
-    {t:"09:00", name:"出發：庫車迎賓館", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：庫車酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
     {t:"09:30", name:"庫車王府", type:"sight", icon:"🏯", coords:[41.7150, 82.9400], wiki:"库车王府", url:"https://baike.baidu.com/item/库车王府", desc:"參觀庫車王府，獨一無二的漢維合璧建築風情。"},
     {t:"13:00", name:"克孜爾千佛洞", type:"sight", icon:"🗿", coords:[41.8333, 82.5000], wiki:"克孜尔千佛洞", url:"https://baike.baidu.com/item/克孜尔千佛洞", desc:"包含專業講解。車程時間：庫車市→(約70KM)克孜爾千佛洞。", sees:["中國開鑿最早的大型石窟群（約西元3世紀），世界文化遺產", "展示了獨特的龜茲風格壁畫，儘管曾遭受外國探險家的大量割取"]},
-    {t:"17:30", name:"拜城尊茂溫州酒店 (或同級准5星)", type:"hotel", icon:"🏨", coords:[41.7909, 81.8741], desc:"車程時間：克孜爾千佛洞→(約80KM)拜城縣。"}
+    {t:"17:30", name:"拜城尊茂溫州酒店", type:"hotel", icon:"🏨", coords:[41.7909, 81.8741], desc:"車程時間：克孜爾千佛洞→(約80KM)拜城縣。"}
   ]},
 { id:6, date:"10/28", dow:"Day 7", theme:"溫宿大峽谷", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80新疆烤包子)",
   notices:["溫宿大峽谷包含區間車"],
   stops:[
     {t:"09:00", name:"出發：拜城尊茂溫州酒店", type:"hotel", icon:"🏨", coords:[41.7909, 81.8741], desc:"從昨晚入住的酒店出發。"},
     {t:"11:00", name:"溫宿大峽谷", type:"sight", icon:"🌄", coords:[41.4500, 80.3500], wiki:"温宿大峡谷", url:"https://baike.baidu.com/item/温宿大峡谷", desc:"包含區間車。車程時間：拜城縣→(約130KM)溫宿大峽谷。", sees:["融合丹霞、雅丹、岩鹽喀斯特地貌的「活的地質博物館」", "6號谷「火星地貌」充滿科幻感，彷彿登陸外星表面"]},
-    {t:"16:00", name:"塔河花園酒店 (或同級准4星)", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"車程時間：溫宿大峽谷→(約140KM)阿拉爾市。"}
+    {t:"16:00", name:"塔河花園/塔河觀瀾/桉漫君悅酒店", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"車程時間：溫宿大峽谷→(約140KM)阿拉爾市。"}
   ]},
 { id:7, date:"10/29", dow:"Day 8", theme:"第二條沙漠公路 · 和田夜市", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100發餐費)",
   notices:["長途拉車穿越塔克拉瑪幹沙漠，車程約 440KM"],
   stops:[
-    {t:"09:00", name:"出發：塔河花園酒店", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：阿拉爾酒店", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"從昨晚入住的酒店出發。"},
     {t:"10:00", name:"第二條沙漠公路穿越", type:"sight", icon:"🏜️", coords:[38.5000, 80.5000], wiki:"塔里木沙漠公路", desc:"沿第二條沙漠公路穿越塔克拉瑪幹沙漠、沙漠觀景台、沙漠胡楊風光。"},
-    {t:"17:00", name:"和田迎賓館 (或同級准5星)", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"抵達和田市並入住。"},
+    {t:"17:00", name:"和田迎賓館 / 希爾頓歡朋酒店", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"抵達和田市並入住。"},
     {t:"18:30", name:"和田夜市", type:"food", icon:"🍢", coords:[37.1150, 79.9350], wiki:"和田市", url:"https://baike.baidu.com/item/和田夜市", desc:"晚餐於和田夜市（發餐費100元自理）。"}
   ]},
 { id:8, date:"10/30", dow:"Day 9", theme:"澤普金胡楊國家森林公園", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80紅柳烤肉)",
   notices:["金胡楊國家森林公園包含區間車"],
   stops:[
-    {t:"09:00", name:"出發：和田迎賓館", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：和田酒店", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"從昨晚入住的酒店出發。"},
     {t:"14:00", name:"澤普金胡楊國家森林公園", type:"sight", icon:"🌳", coords:[38.1900, 77.2000], wiki:"泽普县", url:"https://baike.baidu.com/item/泽普金湖杨国家森林公园", desc:"包含區間車。欣賞金色胡楊風光。車程時間：和田市→(約320KM)金胡楊國家森林公園。"},
-    {t:"17:00", name:"澤普金胡楊國際酒店 (或同級准4星)", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"車程時間：公園→(約35KM)澤普縣。入住酒店。"}
+    {t:"17:00", name:"澤普金胡楊國際/莎車雲上居/亞朵酒店", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"車程時間：公園→(約35KM)澤普縣。入住酒店。"}
   ]},
 { id:9, date:"10/31", dow:"Day 10", theme:"莎車老街 · 巴楚紅海", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80巴楚烤魚)",
   notices:["紅海景區包含區間車，欣賞水上胡楊"],
   stops:[
-    {t:"09:00", name:"出發：澤普金胡楊國際酒店", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：莎車酒店", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"從昨晚入住的酒店出發。"},
     {t:"10:00", name:"莎車喀讚其老街 & 莎車王陵", type:"sight", icon:"🕌", coords:[38.4100, 77.2400], wiki:"莎车县", url:"https://baike.baidu.com/item/莎车王陵", desc:"遊覽莎車喀讚其老街、莎車王陵。車程約 30KM。"},
     {t:"14:30", name:"巴楚紅海景區", type:"sight", icon:"🌊", coords:[39.7600, 78.5000], wiki:"巴楚县", url:"https://baike.baidu.com/item/巴楚红海景区", desc:"包含區間車，水上胡楊風光。車程時間：莎車縣→(約260KM)巴楚縣→(約10KM)紅海景區。"},
-    {t:"18:00", name:"巴楚麗楓酒店 (或同級准4星)", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"入住巴楚縣酒店。"}
+    {t:"18:00", name:"巴楚麗楓 / 全季 / 錦疆酒店", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"入住巴楚縣酒店。"}
   ]},
 { id:10, date:"11/1", dow:"Day 11", theme:"喀什風情 · 汗巴扎夜市", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100發餐費)",
   notices:["前往喀什，車程約 300KM"],
   stops:[
-    {t:"09:00", name:"出發：巴楚麗楓酒店", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：巴楚酒店", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"從昨晚入住的酒店出發。"},
     {t:"14:00", name:"高台民居 & 香妃園", type:"sight", icon:"🏘️", coords:[39.4704, 75.9898], wiki:"香妃墓", url:"https://baike.baidu.com/item/香妃园", desc:"沿途欣賞戈壁風光，遊覽高台民居、香妃園。"},
-    {t:"17:30", name:"古城逸扉酒店 (或同級准5星)", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"入住喀什市區酒店。"},
+    {t:"17:30", name:"古城逸扉 / 東城假日 / 希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"入住喀什市區酒店。"},
     {t:"18:30", name:"汗巴扎夜市", type:"food", icon:"🍢", coords:[39.4720, 75.9850], wiki:"喀什市", desc:"晚餐於汗巴扎夜市（發餐費100元自理）。"}
   ]},
 { id:11, date:"11/2", dow:"Day 12", theme:"喀什古城 · 百年老茶館", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80新疆手抓肉)",
   notices:["欣賞喀什古城開城儀式"],
   stops:[
-    {t:"09:00", name:"出發：古城逸扉酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：喀什酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
     {t:"10:00", name:"喀什古城", type:"sight", icon:"🏰", coords:[39.4704, 75.9898], wiki:"喀什老城", url:"https://baike.baidu.com/item/喀什古城", desc:"喀什古城開城儀式、喀什古城、職人街、彩虹巷、百年老茶館、艾提尕爾清真寺。"},
-    {t:"17:30", name:"美豪麗致酒店 (或同級准4星)", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"車程時間：喀什市區→(車程約100KM)烏恰縣。入住酒店。"}
+    {t:"17:30", name:"美豪麗致酒店 / 維也納酒店", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"車程時間：喀什市區→(車程約100KM)烏恰縣。入住酒店。"}
   ]},
 { id:12, date:"11/3", dow:"Day 13", theme:"中國西極 · 斯木哈納村", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥180新疆烤全羊)",
   notices:["造訪中國西極石碑"],
   stops:[
-    {t:"09:00", name:"出發：美豪麗致酒店", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：烏恰酒店", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"從昨晚入住的酒店出發。"},
     {t:"12:00", name:"七彩丹霞與西極石碑", type:"sight", icon:"🏔️", coords:[39.7500, 74.0000], wiki:"伊尔克什坦", url:"https://baike.baidu.com/item/斯木哈纳村", desc:"途徑七彩丹霞地貌、貝殼山、烏恰天山昆侖山交匯地貌觀景臺、沿途遠眺昆崙山、斯木哈納村-中國西極石碑。車程時間：烏恰縣→(車程約140KM)斯木哈納村。"},
-    {t:"17:30", name:"希爾頓歡朋酒店 (或同級准5星)", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"車程時間：斯木哈納村→(車程約240KM)喀什市區。入住酒店。"}
+    {t:"17:30", name:"古城逸扉 / 希爾頓歡朋 / 希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"車程時間：斯木哈納村→(車程約240KM)喀什市區。入住酒店。"}
   ]},
 { id:13, date:"11/4", dow:"Day 14", theme:"帕米爾高原 · 卡拉庫里湖", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100高原牦牛肉)",
   notices:["金草灘濕地公園包含電瓶車"],
   stops:[
-    {t:"09:00", name:"出發：希爾頓歡朋酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：喀什酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
     {t:"13:00", name:"卡拉庫里湖 & 中巴友誼公路", type:"sight", icon:"🏞️", coords:[38.4333, 75.0500], wiki:"喀拉库勒湖", url:"https://baike.baidu.com/item/喀拉库勒湖", desc:"蓋孜峽谷風光、中巴友誼公路、卡拉庫里湖、遠眺帕米爾高原雪山群。車程約 180KM。"},
     {t:"15:30", name:"石頭城 & 金草灘", type:"sight", icon:"🏰", coords:[37.7700, 75.2200], wiki:"石头城 (塔什库尔干)", url:"https://baike.baidu.com/item/塔什库尔干石头城", desc:"石頭城、金草灘濕地公園(含電瓶車)。車程約 100KM。"},
-    {t:"17:30", name:"塔縣般藍酒店 (或同級4星)", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"入住塔什庫爾幹酒店。"}
+    {t:"17:30", name:"塔縣般藍酒店 / 全景星空酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"入住塔什庫爾幹酒店。"}
   ]},
 { id:14, date:"11/5", dow:"Day 15", theme:"盤龍古道 · 塔吉克家訪", budget:"住宿: 團費含 | 交通: 團費含(換商務車) | 餐食: 早(含) 午(¥60) 晚(¥80塔吉克風味)",
   notices:["盤龍古道需換乘7座商務車(5人/車)"],
   stops:[
-    {t:"09:00", name:"出發：塔縣般藍酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：塔縣酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
     {t:"10:30", name:"盤龍古道", type:"sight", icon:"🛣️", coords:[37.6000, 75.3000], wiki:"塔什库尔干塔吉克自治县", url:"https://baike.baidu.com/item/盘龙古道", desc:"盤龍古道(換乘7座商務車，5人/車)、班底兒藍湖。", sees:["橫臥於帕米爾高原的史詩天路，海拔超4,000米", "30公里路段包含600多個「九曲十八彎」的S形彎道", "標誌性路牌：「今日走過了所有的彎路，從此人生盡是坦途」"]},
     {t:"14:00", name:"塔吉克族家訪", type:"sight", icon:"🛖", coords:[37.7000, 75.2500], desc:"托格倫夏村、塔吉克族家訪。"},
-    {t:"17:30", name:"塔縣般藍酒店 (或同級4星)", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"結束盤龍古道環線返回酒店。"}
+    {t:"17:30", name:"塔縣般藍酒店 / 全景星空酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"結束盤龍古道環線返回酒店。"}
   ]},
 { id:15, date:"11/6", dow:"Day 16", theme:"白沙湖 · 返回喀什", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100西域歡送宴)",
   notices:["車程返回喀什市區"],
   stops:[
-    {t:"09:00", name:"出發：塔縣般藍酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：塔縣酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
     {t:"11:00", name:"塔合曼濕地 & 布倫口白沙湖", type:"sight", icon:"🌊", coords:[38.7500, 74.8500], wiki:"布伦口水库", url:"https://baike.baidu.com/item/白沙山-白沙湖景区", desc:"塔合曼濕地觀景台、布倫口白沙湖。車程時間：塔什庫爾幹→(約130KM)布倫口白沙湖。"},
-    {t:"17:30", name:"喀什機場亞朵酒店 (或同級4星)", type:"hotel", icon:"🏨", coords:[39.5300, 76.0200], desc:"車程時間：白沙湖→(約150KM)喀什市區。入住酒店。"}
+    {t:"17:30", name:"喀什機場亞朵酒店", type:"hotel", icon:"🏨", coords:[39.5300, 76.0200], desc:"車程時間：白沙湖→(約150KM)喀什市區。入住酒店。"}
   ]},
-{ id:16, date:"11/7", dow:"Day 17", theme:"喀什飛往北京", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(機上) 晚(風味餐)",
-  notices:["航班：CA1216 1400/1900 飛往北京"],
+{ id:16, date:"11/7", dow:"Day 17", theme:"喀什飛往北京", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(風味餐) 晚(風味餐)",
+  notices:["航班：CA1216 2045/0145+1 飛往北京", "上午喀什市區自由活動"],
   stops:[
-    {t:"09:00", name:"出發：喀什機場亞朵酒店", type:"hotel", icon:"🏨", coords:[39.5300, 76.0200], desc:"從昨晚入住的酒店出發。"},
-    {t:"14:00", name:"喀什機場 (KSZ) 出發", type:"other", icon:"✈️", coords:[39.5422, 76.0197], desc:"早餐後乘機前往北京。車程時間：喀什市區→(約10KM)喀什機場。"},
-    {t:"19:30", name:"北京首都機場 (PEK) 抵達", type:"other", icon:"🛬", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"抵達北京。"},
-    {t:"20:30", name:"北京機場附近酒店", type:"hotel", icon:"🏨", coords:[40.0800, 116.6000], desc:"入住機場附近酒店。"}
+    {t:"09:00", name:"喀什市區自由活動", type:"sight", icon:"🏙️", coords:[39.4750, 75.9900], desc:"早餐後於喀什市區自由活動，整理行李並採買伴手禮。"},
+    {t:"18:00", name:"喀什機場 (KSZ) 出發", type:"other", icon:"✈️", coords:[39.5422, 76.0197], desc:"乘機前往北京（搭乘航班 CA1216）。車程時間：喀什市區→(約10KM)喀什機場。"},
+    {t:"01:45", name:"北京首都機場 (PEK) 抵達", type:"other", icon:"🛬", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"隔日凌晨 01:45 抵達北京。"},
+    {t:"02:30", name:"北京機場附近酒店", type:"hotel", icon:"🏨", coords:[40.0800, 116.6000], desc:"入住機場附近酒店。"}
   ]},
 { id:17, date:"11/8", dow:"Day 18", theme:"北京返回台北", budget:"住宿: 無 | 交通: 團費含 | 餐食: 早(含) 午(機上餐)",
   notices:["航班：CA189 1355/1720 返回台北"],
   stops:[
-    {t:"09:00", name:"出發：北京機場附近酒店", type:"hotel", icon:"🏨", coords:[40.0800, 116.6000], desc:"從昨晚入住的酒店出發。"},
-    {t:"09:30", name:"祥雲歐式小鎮", type:"sight", icon:"🏘️", coords:[40.0900, 116.5800], desc:"輕鬆早餐，逛附近祥雲歐式小鎮後，送機。"},
+    {t:"10:00", name:"出發：北京機場附近酒店", type:"hotel", icon:"🏨", coords:[40.0800, 116.6000], desc:"從昨晚入住的酒店出發。"},
     {t:"13:55", name:"北京首都機場 (PEK) 出發", type:"other", icon:"🛫", coords:[40.0799, 116.6031], desc:"搭乘 CA189 1355/1720 準備返回台北。"},
     {t:"17:20", name:"桃園機場 (TPE) 抵達", type:"other", icon:"🛬", coords:[25.0796, 121.2342], wiki:"桃园国际机场", desc:"抵達台北，行程圓滿結束。"}
   ]}
 ];
 
 /* ============ STATE ============ */
-let currentDay = "global";
-let map, layerGroup, baseTile;
+var currentDay = "global";
+var filterHotelsOnly = false;
+var map, layerGroup, baseTile;
 
-const tileUrls = {
+var tileUrls = {
   dark:"https://wprd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}",
   light:"https://wprd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}"
 };
 
-let theme = (function(){try{return localStorage.getItem("nj2026_theme")||"dark"}catch(e){return "dark"}})();
-const imgCache = {};
-const LSKEY = "nj2026_custom_v1";
-let customStops = loadCustom();
+var theme = "dark";
+try { theme = localStorage.getItem("nj2026_theme") || "dark"; } catch(e){}
 
-function loadCustom(){ try{ return JSON.parse(localStorage.getItem(LSKEY)) || {}; }catch(e){ return {}; } }
+var imgCache = {};
+var LSKEY = "nj2026_custom_v1";
+
+function loadCustom(){ 
+    try { 
+        var raw = JSON.parse(localStorage.getItem(LSKEY)); 
+        return (raw && typeof raw === 'object' && !Array.isArray(raw)) ? raw : {}; 
+    } catch(e) { 
+        return {}; 
+    } 
+}
+var customStops = loadCustom();
+
 function saveCustom(){ try{ localStorage.setItem(LSKEY, JSON.stringify(customStops)); }catch(e){} }
 
-const LSKEY_OV = "nj2026_overrides_v1";
-let overrides = (function(){try{return JSON.parse(localStorage.getItem(LSKEY_OV))||{}}catch(e){return{}}})();
+var LSKEY_OV = "nj2026_overrides_v1";
+var overrides = {};
+try {
+    var rawOv = JSON.parse(localStorage.getItem(LSKEY_OV));
+    if (rawOv && typeof rawOv === 'object' && !Array.isArray(rawOv)) {
+        overrides = rawOv;
+    }
+} catch(e){}
+
 function saveOverrides(){ try{localStorage.setItem(LSKEY_OV, JSON.stringify(overrides))}catch(e){} }
 
-const defaultLegs = {};
-DAYS.forEach((dd,di)=>{
-  dd.stops.forEach((s,i)=>{ s.bid = "b"+di+"_"+i; });
-  dd.stops.forEach((s,i)=>{ const n=dd.stops[i+1]; if(n&&s.travel) defaultLegs[s.bid+">"+n.bid]=s.travel; });
+var defaultLegs = {};
+DAYS.forEach(function(dd,di){
+  dd.stops.forEach(function(s,i){ s.bid = "b"+di+"_"+i; });
+  dd.stops.forEach(function(s,i){ var n=dd.stops[i+1]; if(n&&s.travel) defaultLegs[s.bid+">"+n.bid]=s.travel; });
 });
 
 function stopsForDay(d){
-  const out = [];
-  DAYS.forEach((dd,di)=>{
-    dd.stops.forEach(s=>{
-      const ov = overrides[s.bid]||{};
+  var out = [];
+  DAYS.forEach(function(dd,di){
+    dd.stops.forEach(function(s){
+      var ov = overrides[s.bid]||{};
       if(ov.archived) return;
-      const effDay = (ov.day===undefined)?di:ov.day;
+      var effDay = (ov.day===undefined)?di:ov.day;
       if(effDay!==d) return;
-      out.push({...s, t:(ov.t||s.t), movedDay:(ov.day!==undefined&&ov.day!==di), retimed:!!ov.t});
+      
+      // ES5 compatible object merging
+      var newStop = Object.assign({}, s);
+      newStop.t = ov.t || s.t;
+      newStop.movedDay = (ov.day !== undefined && ov.day !== di);
+      newStop.retimed = !!ov.t;
+      out.push(newStop);
     });
   });
-  (customStops[d]||[]).forEach(s=>out.push({...s, custom:true}));
-  out.sort((a,b)=> timeKey(a.t)-timeKey(b.t));
+  
+  var cStops = customStops[d];
+  if(Array.isArray(cStops)){
+      cStops.forEach(function(s){ 
+          var newCStop = Object.assign({}, s);
+          newCStop.custom = true;
+          out.push(newCStop); 
+      });
+  }
+  
+  if (filterHotelsOnly) {
+      out = out.filter(function(s) {
+          return s.type === "hotel" || s.icon === "🏨" || s.name.indexOf("酒店") > -1 || s.name.indexOf("賓館") > -1;
+      });
+  }
+  
+  out.sort(function(a,b){ return timeKey(a.t)-timeKey(b.t); });
   return out;
 }
 
 function timeKey(t){
-  const m = (t||"").match(/(\d{1,2}):(\d{2})/);
+  var m = (t||"").match(/(\d{1,2}):(\d{2})/);
   return m ? (+m[1])*60+(+m[2]) : 9999;
 }
 
 function haversineKm(a,b){
-  const R=6371, dLa=(b[0]-a[0])*Math.PI/180, dLo=(b[1]-a[1])*Math.PI/180;
-  const la1=a[0]*Math.PI/180, la2=b[0]*Math.PI/180;
-  const h=Math.sin(dLa/2)**2+Math.cos(la1)*Math.cos(la2)*Math.sin(dLo/2)**2;
+  if(!a || !b || a.length < 2 || b.length < 2) return NaN;
+  var R=6371, dLa=(b[0]-a[0])*Math.PI/180, dLo=(b[1]-a[1])*Math.PI/180;
+  var la1=a[0]*Math.PI/180, la2=b[0]*Math.PI/180;
+  var h=Math.sin(dLa/2)*Math.sin(dLa/2)+Math.cos(la1)*Math.cos(la2)*Math.sin(dLo/2)*Math.sin(dLo/2);
   return 2*R*Math.asin(Math.sqrt(h));
 }
 
 function wgs2gcj(lat,lng){
-  const a=6378245, ee=0.00669342162296594323;
-  const tLat=(x,y)=>{let r=-100+2*x+3*y+0.2*y*y+0.1*x*y+0.2*Math.sqrt(Math.abs(x)); r+=(20*Math.sin(6*x*Math.PI)+20*Math.sin(2*x*Math.PI))*2/3; r+=(20*Math.sin(y*Math.PI)+40*Math.sin(y/3*Math.PI))*2/3; r+=(160*Math.sin(y/12*Math.PI)+320*Math.sin(y*Math.PI/30))*2/3;return r;};
-  const tLng=(x,y)=>{let r=300+x+2*y+0.1*x*x+0.1*x*y+0.1*Math.sqrt(Math.abs(x)); r+=(20*Math.sin(6*x*Math.PI)+20*Math.sin(2*x*Math.PI))*2/3; r+=(20*Math.sin(x*Math.PI)+40*Math.sin(x/3*Math.PI))*2/3; r+=(150*Math.sin(x/12*Math.PI)+300*Math.sin(x/30*Math.PI))*2/3;return r;};
-  const dLat0=tLat(lng-105,lat-35), dLng0=tLng(lng-105,lat-35);
-  const radLat=lat/180*Math.PI; let magic=Math.sin(radLat); magic=1-ee*magic*magic; const sqrtMagic=Math.sqrt(magic);
-  const dLat=(dLat0*180)/((a*(1-ee))/(magic*sqrtMagic)*Math.PI); const dLng=(dLng0*180)/(a/sqrtMagic*Math.cos(radLat)*Math.PI);
+  var a=6378245, ee=0.00669342162296594323;
+  var tLat=function(x,y){var r=-100+2*x+3*y+0.2*y*y+0.1*x*y+0.2*Math.sqrt(Math.abs(x)); r+=(20*Math.sin(6*x*Math.PI)+20*Math.sin(2*x*Math.PI))*2/3; r+=(20*Math.sin(y*Math.PI)+40*Math.sin(y/3*Math.PI))*2/3; r+=(160*Math.sin(y/12*Math.PI)+320*Math.sin(y*Math.PI/30))*2/3;return r;};
+  var tLng=function(x,y){var r=300+x+2*y+0.1*x*x+0.1*x*y+0.1*Math.sqrt(Math.abs(x)); r+=(20*Math.sin(6*x*Math.PI)+20*Math.sin(2*x*Math.PI))*2/3; r+=(20*Math.sin(x*Math.PI)+40*Math.sin(x/3*Math.PI))*2/3; r+=(150*Math.sin(x/12*Math.PI)+300*Math.sin(x/30*Math.PI))*2/3;return r;};
+  var dLat0=tLat(lng-105,lat-35), dLng0=tLng(lng-105,lat-35);
+  var radLat=lat/180*Math.PI; var magic=Math.sin(radLat); magic=1-ee*magic*magic; var sqrtMagic=Math.sqrt(magic);
+  var dLat=(dLat0*180)/((a*(1-ee))/(magic*sqrtMagic)*Math.PI); var dLng=(dLng0*180)/(a/sqrtMagic*Math.cos(radLat)*Math.PI);
   return [lat+dLat, lng+dLng];
 }
 
 function resolveLeg(a,b){
   if(!a||!b) return null;
-  if(a.bid && b.bid && defaultLegs[a.bid+">"+b.bid]) return {...defaultLegs[a.bid+">"+b.bid], generated:false};
+  if(a.bid && b.bid && defaultLegs[a.bid+">"+b.bid]) {
+      var dLeg = Object.assign({}, defaultLegs[a.bid+">"+b.bid]);
+      dLeg.generated = false;
+      return dLeg;
+  }
   if(!a.coords || !b.coords) return null;
-  const km = haversineKm(a.coords, b.coords);
-  if(km > 800 || a.icon==="✈️" || a.icon==="🛫" || b.icon==="🛬") return {mode:"flight", label:`航班/長途：約 ${km.toFixed(0)} 公里`, mins:Math.round(km/12), generated:true, distance: km};
-  if(km<1.3) return {mode:"walk", label:`自動路段：步行約 ${(km*1000).toFixed(0)} 公尺`, mins:Math.max(3,Math.round(km*13)), generated:true, distance: km};
-  return {mode:"car", label:`自動路段：車程約 ${km.toFixed(1)} 公里`, mins:Math.round(km*1.5+6), generated:true, distance: km};
+  var km = haversineKm(a.coords, b.coords);
+  if(isNaN(km)) return null;
+  if(km > 800 || a.icon==="✈️" || a.icon==="🛫" || b.icon==="🛬") return {mode:"flight", label:"航班/長途：約 " + km.toFixed(0) + " 公里", mins:Math.round(km/12), generated:true, distance: km};
+  if(km<1.3) return {mode:"walk", label:"自動路段：步行約 " + (km*1000).toFixed(0) + " 公尺", mins:Math.max(3,Math.round(km*13)), generated:true, distance: km};
+  return {mode:"car", label:"自動路段：車程約 " + km.toFixed(1) + " 公里", mins:Math.round(km*1.5+6), generated:true, distance: km};
 }
 
 /* ============ TABS & CONTROLS ============ */
-const tabsEl = document.getElementById("tabs");
+var tabsEl = document.getElementById("tabs");
 
-// Scroll controls
-document.getElementById("scrollLeft").onclick = () => { tabsEl.scrollBy({ left: -250, behavior: "smooth" }); };
-document.getElementById("scrollRight").onclick = () => { tabsEl.scrollBy({ left: 250, behavior: "smooth" }); };
+var leftBtn = document.getElementById("scrollLeft");
+if (leftBtn) leftBtn.onclick = function() { if(tabsEl) tabsEl.scrollBy({ left: -250, behavior: "smooth" }); };
 
-// Toggle visibility control
-document.getElementById("toggleTabsBtn").onclick = () => { 
-  const tabsWrapper = document.getElementById("tabsControls");
-  tabsWrapper.classList.toggle("collapsed");
-  const isHidden = tabsWrapper.classList.contains("collapsed");
-  document.getElementById("toggleTabsBtn").textContent = isHidden ? "👁️ 顯示導覽" : "👁️ 隱藏導覽";
-};
+var rightBtn = document.getElementById("scrollRight");
+if (rightBtn) rightBtn.onclick = function() { if(tabsEl) tabsEl.scrollBy({ left: 250, behavior: "smooth" }); };
 
-document.getElementById("addBtn").onclick = ()=>{ editCid = null; editBid = null; clearForm(); openModal(false); };
+var toggleBtn = document.getElementById("toggleTabsBtn");
+if (toggleBtn) {
+    toggleBtn.onclick = function() { 
+      var tabsWrapper = document.getElementById("tabsControls");
+      if(tabsWrapper) {
+          tabsWrapper.classList.toggle("collapsed");
+          var isHidden = tabsWrapper.classList.contains("collapsed");
+          toggleBtn.textContent = isHidden ? "👁️ 顯示導覽" : "👁️ 隱藏導覽";
+      }
+    };
+}
+
+var hotelFilterBtn = document.getElementById("hotelFilterBtn");
+if(hotelFilterBtn) {
+    hotelFilterBtn.onclick = function() {
+        filterHotelsOnly = !filterHotelsOnly;
+        hotelFilterBtn.style.borderColor = filterHotelsOnly ? "var(--gold)" : "";
+        hotelFilterBtn.style.color = filterHotelsOnly ? "var(--gold)" : "var(--text)";
+        hotelFilterBtn.textContent = filterHotelsOnly ? "🏨 顯示全部行程" : "🏨 僅顯住宿";
+        selectDay(currentDay);
+    };
+}
+
+var addBtn = document.getElementById("addBtn");
+if (addBtn) addBtn.onclick = function(){ editCid = null; editBid = null; clearForm(); openModal(false); };
 
 function archivedList(){
-  const out = [];
-  DAYS.forEach((dd,di)=>dd.stops.forEach(s=>{ if((overrides[s.bid]||{}).archived) out.push({...s, fromDay:di}); }));
+  var out = [];
+  DAYS.forEach(function(dd,di){
+      dd.stops.forEach(function(s){ 
+          if((overrides[s.bid]||{}).archived) {
+              var aStop = Object.assign({}, s);
+              aStop.fromDay = di;
+              out.push(aStop);
+          }
+      });
+  });
   return out;
 }
 
 function buildTabs(){
+  if(!tabsEl) return;
   tabsEl.innerHTML = "";
   
-  const gb = document.createElement("button");
+  var gb = document.createElement("button");
   gb.className = "tab" + (currentDay==="global" ? " active" : "");
-  gb.innerHTML = `🗺️ 全覽<small>Global View</small>`;
-  gb.onclick = ()=>selectDay("global");
+  gb.innerHTML = "🗺️ 全覽<small>Global View</small>";
+  gb.onclick = function(){ selectDay("global"); };
   tabsEl.appendChild(gb);
 
-  DAYS.forEach((d,i)=>{
-    const b = document.createElement("button");
+  DAYS.forEach(function(d,i){
+    var b = document.createElement("button");
     b.className = "tab" + (currentDay===i ? " active" : "");
-    b.innerHTML = `第${i+1}天 · ${d.date}<small>${d.theme.split(" · ")[0]}</small>`;
-    b.onclick = ()=>selectDay(i);
+    b.innerHTML = "第" + (i+1) + "天 · " + d.date + "<small>" + d.theme.split(" · ")[0] + "</small>";
+    b.onclick = function(){ selectDay(i); };
     tabsEl.appendChild(b);
   });
   
-  const n = archivedList().length;
+  var n = archivedList().length;
   if(n > 0 || currentDay==="arch") {
-    const ab = document.createElement("button");
+    var ab = document.createElement("button");
     ab.className = "tab" + (currentDay==="arch" ? " active" : "");
-    ab.innerHTML = `🗂 封存<small>${n} 個項目</small>`;
-    ab.onclick = ()=>selectDay("arch");
+    ab.innerHTML = "🗂 封存<small>" + n + " 個項目</small>";
+    ab.onclick = function(){ selectDay("arch"); };
     tabsEl.appendChild(ab);
   }
 }
@@ -571,74 +648,84 @@ function selectDay(i){
       renderMap();
   }
 }
+window.selectDay = selectDay; 
 
 function renderGlobalList() {
-    const left = document.getElementById("left");
+    var left = document.getElementById("left");
+    if(!left) return;
     
-    // Calculate global distances dynamically based on current state of stops
-    let allStops = [];
-    DAYS.forEach((d, i) => { allStops = allStops.concat(stopsForDay(i)); });
+    var allStops = [];
+    DAYS.forEach(function(d, i) { allStops = allStops.concat(stopsForDay(i)); });
     
-    let gKm = 0, aKm = 0;
-    for(let i=0; i<allStops.length-1; i++){
-        const a = allStops[i], b = allStops[i+1];
-        if(a.coords && b.coords) {
-            const km = haversineKm(a.coords, b.coords);
-            if(km > 800 || a.icon==="✈️" || a.icon==="🛫" || b.icon==="🛬") {
-                aKm += km;
-            } else {
-                gKm += km;
+    var gKm = 0, aKm = 0;
+    for(var i=0; i<allStops.length-1; i++){
+        var a = allStops[i], b = allStops[i+1];
+        if(a && b && a.coords && b.coords) {
+            var km = haversineKm(a.coords, b.coords);
+            if(!isNaN(km)) {
+                if(km > 800 || a.icon==="✈️" || a.icon==="🛫" || b.icon==="🛬") {
+                    aKm += km;
+                } else {
+                    gKm += km;
+                }
             }
         }
     }
     
-    let html = `<div class="dayHead">
-      <h2>🗺️ 18天深度全景路線總覽</h2>
-      <div class="meta">顏色標記對應行程各天分佈。Day 1 包含 TPE 經 PEK 到 URC 的航線。</div>
-      <div class="budget" style="margin-top:12px;">✈️ 飛行總里程：約 ${aKm.toFixed(0)} km (${(aKm*0.621371).toFixed(0)} mi)</div>
-      <div class="budget" style="margin-left:6px;">🚐 陸路總里程：約 ${gKm.toFixed(0)} km (${(gKm*0.621371).toFixed(0)} mi)</div>
-    </div>`;
+    var filterNotice = filterHotelsOnly ? "<div style='color:var(--gold); margin-top:8px;'>⚠️ 目前僅顯示每日住宿地點</div>" : "";
     
-    DAYS.forEach((d, i) => {
-        const hue = (i * 360 / 18) % 360;
-        const color = `hsl(${hue}, 70%, 50%)`;
-        html += `<div class="card" onclick="selectDay(${i})" style="border-left: 6px solid ${color};">
-            <div class="cbody">
-                <div class="crow1">
-                    <span class="num" style="background:${color}; color:#fff;">Day ${i+1}</span>
-                    <span class="cname">${d.date} - ${d.theme}</span>
-                </div>
-                <div class="cdesc" style="margin-top:6px;">包含：${stopsForDay(i).map(s=>s.name).join("、")}</div>
-            </div>
-        </div>`;
+    var html = "<div class=\"dayHead\">" +
+      "<h2>🗺️ 18天深度全景路線總覽</h2>" +
+      "<div class=\"meta\">顏色標記對應行程各天分佈。Day 1 包含 TPE 經 PEK 到 URC 的航線。</div>" +
+      "<div class=\"budget\" style=\"margin-top:12px;\">✈️ 飛行總里程：約 " + aKm.toFixed(0) + " km (" + (aKm*0.621371).toFixed(0) + " mi)</div>" +
+      "<div class=\"budget\" style=\"margin-left:6px;\">🚐 陸路總里程：約 " + gKm.toFixed(0) + " km (" + (gKm*0.621371).toFixed(0) + " mi)</div>" +
+      filterNotice + 
+    "</div>";
+    
+    DAYS.forEach(function(d, i) {
+        var hue = (i * 360 / 18) % 360;
+        var color = "hsl(" + hue + ", 70%, 50%)";
+        var stopNames = stopsForDay(i).map(function(s){return s.name}).join("、");
+        
+        html += "<div class=\"card\" onclick=\"selectDay(" + i + ")\" style=\"border-left: 6px solid " + color + ";\">" +
+            "<div class=\"cbody\">" +
+                "<div class=\"crow1\">" +
+                    "<span class=\"num\" style=\"background:" + color + "; color:#fff;\">Day " + (i+1) + "</span>" +
+                    "<span class=\"cname\">" + d.date + " - " + d.theme + "</span>" +
+                "</div>" +
+                "<div class=\"cdesc\" style=\"margin-top:6px;\">包含：" + (stopNames || "無資料") + "</div>" +
+            "</div>" +
+        "</div>";
     });
     left.innerHTML = html;
     left.scrollTop = 0;
 }
 
 function renderGlobalMap() {
-    layerGroup.clearLayers();
-    const allPts = [];
+    if(typeof L === "undefined" || !layerGroup) return;
     
-    DAYS.forEach((d, i) => {
-        const hue = (i * 360 / 18) % 360;
-        const color = `hsl(${hue}, 75%, 45%)`;
-        const stops = stopsForDay(i);
-        const dayPts = [];
+    layerGroup.clearLayers();
+    var allPts = [];
+    
+    DAYS.forEach(function(d, i) {
+        var hue = (i * 360 / 18) % 360;
+        var color = "hsl(" + hue + ", 75%, 45%)";
+        var stops = stopsForDay(i);
+        var dayPts = [];
         
-        stops.forEach((s) => {
+        stops.forEach(function(s) {
             if(!s.coords) return;
             allPts.push(s.coords);
             dayPts.push(s.coords);
             
-            const icon = L.divIcon({
+            var icon = L.divIcon({
                 className:"", 
-                html:`<div class="globalIcon" style="background:${color}; width:24px; height:24px;">${i+1}</div>`, 
+                html:"<div class=\"globalIcon\" style=\"background:" + color + "; width:24px; height:24px;\">" + (i+1) + "</div>", 
                 iconSize:[24,24], 
                 iconAnchor:[12,12]
             });
             
-            L.marker(s.coords, {icon}).addTo(layerGroup).bindPopup(`<b>Day ${i+1}</b><br>${s.name}`);
+            L.marker(s.coords, {icon: icon}).addTo(layerGroup).bindPopup("<b>Day " + (i+1) + "</b><br>" + s.name);
         });
         
         if(dayPts.length > 1){
@@ -651,445 +738,637 @@ function renderGlobalMap() {
     }
 }
 
-function archiveBuiltin(bid){ overrides[bid] = {...(overrides[bid]||{}), archived:true}; saveOverrides(); selectDay(currentDay); }
-function restoreBuiltin(bid){ const ov = overrides[bid]; if(ov){ delete ov.archived; if(!ov.t && ov.day===undefined) delete overrides[bid]; } saveOverrides(); selectDay(currentDay); }
+window.archiveBuiltin = function(bid){ 
+    var existing = overrides[bid] || {};
+    existing.archived = true;
+    overrides[bid] = existing; 
+    saveOverrides(); 
+    selectDay(currentDay); 
+}
+window.restoreBuiltin = function(bid){ 
+    var ov = overrides[bid]; 
+    if(ov){ 
+        delete ov.archived; 
+        if(!ov.t && ov.day===undefined) delete overrides[bid]; 
+    } 
+    saveOverrides(); 
+    selectDay(currentDay); 
+}
 
 function renderList(){
-  const d = DAYS[currentDay];
-  const stops = stopsForDay(currentDay);
-  const left = document.getElementById("left");
+  var d = DAYS[currentDay];
+  var stops = stopsForDay(currentDay);
+  var left = document.getElementById("left");
+  if(!left) return;
   
-  // Calculate specific day ground distance
-  let dailyGroundKm = 0;
-  for(let i=0; i<stops.length-1; i++){
-      const a = stops[i], b = stops[i+1];
-      if(a.coords && b.coords) {
-          const km = haversineKm(a.coords, b.coords);
-          if(km <= 800 && a.icon!=="✈️" && a.icon!=="🛫" && b.icon!=="🛬") {
+  var dailyGroundKm = 0;
+  for(var i=0; i<stops.length-1; i++){
+      var a = stops[i], b = stops[i+1];
+      if(a && b && a.coords && b.coords) {
+          var km = haversineKm(a.coords, b.coords);
+          if(!isNaN(km) && km <= 800 && a.icon!=="✈️" && a.icon!=="🛫" && b.icon!=="🛬") {
               dailyGroundKm += km;
           }
       }
   }
   
-  let html = `<div class="dayHead">
-    <h2>第${currentDay+1}天 · ${d.dow} (${d.date})</h2>
-    <div class="meta">${d.theme}</div>
-    <div class="budget">💰 單日預估：${d.budget}</div>
-    <div class="budget" style="margin-left:6px;">🚗 陸路里程：約 ${dailyGroundKm.toFixed(1)} km (${(dailyGroundKm*0.621371).toFixed(1)} mi)</div>
-  </div>`;
-  if(d.notices) d.notices.forEach(n=> html += `<div class="notice">${n}</div>`);
+  var filterNotice = filterHotelsOnly ? "<div style='color:var(--gold); margin-top:8px;'>⚠️ 目前僅顯示住宿地點</div>" : "";
+  
+  var html = "<div class=\"dayHead\">" +
+    "<h2>第" + (currentDay+1) + "天 · " + d.dow + " (" + d.date + ")</h2>" +
+    "<div class=\"meta\">" + d.theme + "</div>" +
+    "<div class=\"budget\">💰 單日預估：" + d.budget + "</div>" +
+    "<div class=\"budget\" style=\"margin-left:6px;\">🚗 陸路里程：約 " + dailyGroundKm.toFixed(1) + " km (" + (dailyGroundKm*0.621371).toFixed(1) + " mi)</div>" +
+    filterNotice +
+  "</div>";
+  if(d.notices && !filterHotelsOnly) d.notices.forEach(function(n) { html += "<div class=\"notice\">" + n + "</div>"; });
 
-  stops.forEach((s,idx)=>{
-    const cls = s.type==="food"?"food":(s.type==="hotel"?"hotel":(s.icon==="✈️"||s.icon==="🛫"||s.icon==="🛬"?"flight":""));
-    const amap = `https://www.amap.com/search?query=${encodeURIComponent(s.name)}`;
-    const gmap = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.name+" 新疆")}`;
-    html += `<div class="card" id="card${idx}" onclick="focusStop(${idx})">
-      <div class="cardTop">
-        <div class="thumb" id="thumb${idx}">${s.icon||"📍"}</div>
-        <div class="cbody">
-          ${s.custom
-            ?`<span style="float:right;display:inline-flex;gap:6px"><button class="delBtn" style="border-color:var(--blue);color:var(--blue)" onclick="event.stopPropagation();editCustom('${s.cid}')">✎ 編輯</button><button class="delBtn" onclick="event.stopPropagation();removeCustom('${s.cid}')">刪除</button></span>`
-            :`<span style="float:right;display:inline-flex;gap:6px"><button class="delBtn" style="border-color:var(--blue);color:var(--blue)" onclick="event.stopPropagation();editBuiltin('${s.bid}')">✎ 時間/日</button><button class="delBtn" onclick="event.stopPropagation();archiveBuiltin('${s.bid}')">🗂 封存</button></span>`}
-          <div class="crow1"><span class="num ${cls}">${idx+1}</span>
-            <span class="ctime">${s.t||""}</span><span class="cname">${s.name}</span></div>
-          <div class="tagrow">
-            ${s.hours?`<span class="tag hours">🕐 ${s.hours}</span>`:""}
-            ${s.price?`<span class="tag price">💴 ${s.price}</span>`:""}
-            ${s.dur?`<span class="tag">⏱ 建議停留 ${s.dur}</span>`:""}
-            ${(s.movedDay||s.retimed)?`<span class="tag" style="color:var(--gold);border-color:#5a4517">📌 已調整${s.movedDay?"（移日）":""}</span>`:""}
-            ${s.alert?`<span class="tag alert">⚠️ ${s.alert}</span>`:""}
-          </div>
-          <div class="cdesc">${s.desc||""}</div>
-          ${s.sees?`<div class="sees"><b>🔎 必看亮點</b><ul>${s.sees.map(x=>`<li>${x}</li>`).join("")}</ul></div>`:""}
-          <div class="clinks">
-            <a href="${amap}" target="_blank" onclick="event.stopPropagation()">高德地圖</a>
-            <a href="${gmap}" target="_blank" onclick="event.stopPropagation()">Google 地圖</a>
-            ${s.url?`<a href="${s.url}" target="_blank" onclick="event.stopPropagation()">${s.urlLabel||"參考網址"}</a>`:""}
-            ${(!s.url&&s.wiki)?`<a href="https://zh.wikipedia.org/wiki/${encodeURIComponent(s.wiki)}" target="_blank" onclick="event.stopPropagation()">維基介紹</a>`:""}
-          </div>
-        </div>
-      </div>
-    </div>`;
-    const lg = resolveLeg(s, stops[idx+1]);
+  if(stops.length === 0) {
+      html += "<div class=\"notice\">此日無相符的資料。</div>";
+  }
+
+  stops.forEach(function(s,idx){
+    var cls = s.type==="food"?"food":(s.type==="hotel"?"hotel":(s.icon==="✈️"||s.icon==="🛫"||s.icon==="🛬"?"flight":""));
+    var amap = "https://www.amap.com/search?query=" + encodeURIComponent(s.name);
+    var gmap = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(s.name+" 新疆");
+    
+    var rightBtns = "";
+    if(s.custom) {
+        rightBtns = "<span style=\"float:right;display:inline-flex;gap:6px\"><button class=\"delBtn\" style=\"border-color:var(--blue);color:var(--blue)\" onclick=\"event.stopPropagation();editCustom('" + s.cid + "')\">✎ 編輯</button><button class=\"delBtn\" onclick=\"event.stopPropagation();removeCustom('" + s.cid + "')\">刪除</button></span>";
+    } else {
+        rightBtns = "<span style=\"float:right;display:inline-flex;gap:6px\"><button class=\"delBtn\" style=\"border-color:var(--blue);color:var(--blue)\" onclick=\"event.stopPropagation();editBuiltin('" + s.bid + "')\">✎ 時間/日</button><button class=\"delBtn\" onclick=\"event.stopPropagation();archiveBuiltin('" + s.bid + "')\">🗂 封存</button></span>";
+    }
+    
+    var tags = "";
+    if(s.hours) tags += "<span class=\"tag hours\">🕐 " + s.hours + "</span>";
+    if(s.price) tags += "<span class=\"tag price\">💴 " + s.price + "</span>";
+    if(s.dur) tags += "<span class=\"tag\">⏱ 建議停留 " + s.dur + "</span>";
+    if(s.movedDay||s.retimed) tags += "<span class=\"tag\" style=\"color:var(--gold);border-color:#5a4517\">📌 已調整" + (s.movedDay?"（移日）":"") + "</span>";
+    if(s.alert) tags += "<span class=\"tag alert\">⚠️ " + s.alert + "</span>";
+    
+    var seesHtml = "";
+    if(s.sees) {
+        var listItems = s.sees.map(function(x){ return "<li>" + x + "</li>"; }).join("");
+        seesHtml = "<div class=\"sees\"><b>🔎 必看亮點</b><ul>" + listItems + "</ul></div>";
+    }
+    
+    var linkHtml = "<a href=\"" + amap + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">高德地圖</a>" +
+                   "<a href=\"" + gmap + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">Google 地圖</a>";
+    if(s.url) linkHtml += "<a href=\"" + s.url + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">" + (s.urlLabel||"參考網址") + "</a>";
+    if(!s.url && s.wiki) linkHtml += "<a href=\"https://zh.wikipedia.org/wiki/" + encodeURIComponent(s.wiki) + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">維基介紹</a>";
+    
+    html += "<div class=\"card\" id=\"card" + idx + "\" onclick=\"focusStop(" + idx + ")\">" +
+      "<div class=\"cardTop\">" +
+        "<div class=\"thumb\" id=\"thumb" + idx + "\">" + (s.icon||"📍") + "</div>" +
+        "<div class=\"cbody\">" +
+          rightBtns +
+          "<div class=\"crow1\"><span class=\"num " + cls + "\">" + (idx+1) + "</span>" +
+            "<span class=\"ctime\">" + (s.t||"") + "</span><span class=\"cname\">" + s.name + "</span></div>" +
+          "<div class=\"tagrow\">" + tags + "</div>" +
+          "<div class=\"cdesc\">" + (s.desc||"") + "</div>" +
+          seesHtml +
+          "<div class=\"clinks\">" + linkHtml + "</div>" +
+        "</div>" +
+      "</div>" +
+    "</div>";
+    
+    var lg = resolveLeg(s, stops[idx+1]);
     if(lg){
-      const M = {metro:"🚇",walk:"🚶",bus:"🚌",car:"🚗",flight:"✈️"};
-      const nxt = stops[idx+1];
-      const gmode = {metro:"transit",bus:"transit",walk:"walking",car:"driving",flight:"flights"}[lg.mode]||"transit";
-      const dirLink = nxt ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(s.name+" 新疆")}&destination=${encodeURIComponent(nxt.name+" 新疆")}&travelmode=${gmode}` : null;
-      let amapLink = null;
+      var M = {metro:"🚇",walk:"🚶",bus:"🚌",car:"🚗",flight:"✈️"};
+      var nxt = stops[idx+1];
+      var gmMap = {metro:"transit",bus:"transit",walk:"walking",car:"driving",flight:"flights"};
+      var gmode = gmMap[lg.mode]||"transit";
+      var dirLink = nxt ? "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent(s.name+" 新疆") + "&destination=" + encodeURIComponent(nxt.name+" 新疆") + "&travelmode=" + gmode : null;
+      var amapLink = null;
       if(nxt && s.coords && nxt.coords && lg.mode!=="flight"){
-        const aMode = {metro:"bus",bus:"bus",walk:"walk",car:"car"}[lg.mode]||"bus";
-        const f = wgs2gcj(s.coords[0], s.coords[1]), t = wgs2gcj(nxt.coords[0], nxt.coords[1]);
-        amapLink = `https://uri.amap.com/navigation?from=${f[1].toFixed(6)},${f[0].toFixed(6)},${encodeURIComponent(s.name)}&to=${t[1].toFixed(6)},${t[0].toFixed(6)},${encodeURIComponent(nxt.name)}&mode=${aMode}&src=nj2026&callnative=1`;
+        var amMap = {metro:"bus",bus:"bus",walk:"walk",car:"car"};
+        var aMode = amMap[lg.mode]||"bus";
+        var f = wgs2gcj(s.coords[0], s.coords[1]), t = wgs2gcj(nxt.coords[0], nxt.coords[1]);
+        amapLink = "https://uri.amap.com/navigation?from=" + f[1].toFixed(6) + "," + f[0].toFixed(6) + "," + encodeURIComponent(s.name) + "&to=" + t[1].toFixed(6) + "," + t[0].toFixed(6) + "," + encodeURIComponent(nxt.name) + "&mode=" + aMode + "&src=nj2026&callnative=1";
       }
-      const a = lg.alt;
-      html += `<div class="leg"><span class="dotline"><i></i></span>
-        <div>
-          <div><span class="mico">${lg.generated?"🧭":""}${M[lg.mode]||"➡️"}</span> ${lg.label} · 約 ${lg.mins} 分鐘${amapLink?` · <a href="${amapLink}" target="_blank">高德路線</a>`:""}${dirLink?` · <a href="${dirLink}" target="_blank">Google路線</a>`:""}</div>
-          ${a?`<div class="alt">🔁 備用：${M[a.mode]||"➡️"} ${a.label} · 約 ${a.mins} 分鐘${a.link?` · <a href="${a.link}" target="_blank">${a.linkLabel||"連結"}</a>`:""}</div>`:""}
-        </div></div>`;
+      var a = lg.alt;
+      var routeLinks = "";
+      if(amapLink) routeLinks += " · <a href=\"" + amapLink + "\" target=\"_blank\">高德路線</a>";
+      if(dirLink) routeLinks += " · <a href=\"" + dirLink + "\" target=\"_blank\">Google路線</a>";
+      
+      html += "<div class=\"leg\"><span class=\"dotline\"><i></i></span>" +
+        "<div>" +
+          "<div><span class=\"mico\">" + (lg.generated?"🧭":"") + (M[lg.mode]||"➡️") + "</span> " + lg.label + " · 約 " + lg.mins + " 分鐘" + routeLinks + "</div>";
+          if(a) {
+              var aLinks = a.link ? " · <a href=\"" + a.link + "\" target=\"_blank\">" + (a.linkLabel||"連結") + "</a>" : "";
+              html += "<div class=\"alt\">🔁 備用：" + (M[a.mode]||"➡️") + " " + a.label + " · 約 " + a.mins + " 分鐘" + aLinks + "</div>";
+          }
+      html += "</div></div>";
     }
   });
   left.innerHTML = html;
   left.scrollTop = 0;
-  stops.forEach((s,idx)=> loadImage(s, idx));
+  stops.forEach(function(s,idx) { loadImage(s, idx); });
 }
 
 function renderArchive(){
-  const left = document.getElementById("left");
-  const items = archivedList();
-  let html = `<div class="dayHead"><h2>🗂 封存的景點</h2><div class="meta">已自行程移除的內建推薦項目——隨時可「↩ 還原」放回原本日期</div></div>`;
-  if(!items.length) html += `<div class="notice">目前沒有封存項目。在任一內建景點卡片右上點「🗂 封存」即可暫時移出行程。</div>`;
-  items.forEach((s,idx)=>{
-    html += `<div class="card" id="card${idx}" onclick="focusStop(${idx})">
-      <div class="cardTop">
-        <div class="thumb" id="thumb${idx}">${s.icon||"📍"}</div>
-        <div class="cbody">
-          <button class="delBtn" style="float:right;border-color:var(--green);color:var(--green)" onclick="event.stopPropagation();restoreBuiltin('${s.bid}')">↩ 還原</button>
-          <div class="crow1"><span class="cname">${s.name}</span></div>
-          <div class="tagrow">
-            <span class="tag">原排程：第${s.fromDay+1}天 ${DAYS[s.fromDay].date}（${s.t||"—"}）</span>
-            ${s.price?`<span class="tag price">💴 ${s.price}</span>`:""}
-            ${s.hours?`<span class="tag hours">🕐 ${s.hours}</span>`:""}
-          </div>
-          <div class="cdesc">${s.desc||""}</div>
-        </div>
-      </div>
-    </div>`;
+  var left = document.getElementById("left");
+  if(!left) return;
+  var items = archivedList();
+  var html = "<div class=\"dayHead\"><h2>🗂 封存的景點</h2><div class=\"meta\">已自行程移除的內建推薦項目——隨時可「↩ 還原」放回原本日期</div></div>";
+  if(!items.length) html += "<div class=\"notice\">目前沒有封存項目。在任一內建景點卡片右上點「🗂 封存」即可暫時移出行程。</div>";
+  items.forEach(function(s,idx){
+      
+    var tags = "<span class=\"tag\">原排程：第" + (s.fromDay+1) + "天 " + DAYS[s.fromDay].date + "（" + (s.t||"—") + "）</span>";
+    if(s.price) tags += "<span class=\"tag price\">💴 " + s.price + "</span>";
+    if(s.hours) tags += "<span class=\"tag hours\">🕐 " + s.hours + "</span>";
+    
+    html += "<div class=\"card\" id=\"card" + idx + "\" onclick=\"focusStop(" + idx + ")\">" +
+      "<div class=\"cardTop\">" +
+        "<div class=\"thumb\" id=\"thumb" + idx + "\">" + (s.icon||"📍") + "</div>" +
+        "<div class=\"cbody\">" +
+          "<button class=\"delBtn\" style=\"float:right;border-color:var(--green);color:var(--green)\" onclick=\"event.stopPropagation();restoreBuiltin('" + s.bid + "')\">↩ 還原</button>" +
+          "<div class=\"crow1\"><span class=\"cname\">" + s.name + "</span></div>" +
+          "<div class=\"tagrow\">" + tags + "</div>" +
+          "<div class=\"cdesc\">" + (s.desc||"") + "</div>" +
+        "</div>" +
+      "</div>" +
+    "</div>";
   });
   left.innerHTML = html;
   left.scrollTop = 0;
-  items.forEach((s,idx)=> loadImage(s, idx));
+  items.forEach(function(s,idx){ loadImage(s, idx); });
 }
 
 async function loadImage(s, idx){
   if(!s.wiki && !s.imgUrl) return;
-  const key = s.imgUrl || s.wiki;
+  var key = s.imgUrl || s.wiki;
   if(imgCache[key]===false) return;
-  let src = s.imgUrl || imgCache[key];
+  var src = s.imgUrl || imgCache[key];
   if(!src){
     try{
-      const r = await fetch(`https://zh.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(s.wiki)}`);
+      var r = await fetch("https://zh.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(s.wiki));
       if(!r.ok) throw 0;
-      const j = await r.json();
+      var j = await r.json();
       src = (j.thumbnail&&j.thumbnail.source)||(j.originalimage&&j.originalimage.source);
       if(!src) throw 0;
       imgCache[key]=src;
     }catch(e){ imgCache[key]=false; return; }
   }
-  const el = document.getElementById("thumb"+idx);
+  var el = document.getElementById("thumb"+idx);
   if(el){
-    const img = new Image();
-    img.onload = ()=>{ el.innerHTML=""; el.appendChild(img); };
+    var img = new Image();
+    img.onload = function(){ el.innerHTML=""; el.appendChild(img); };
     img.src = src;
   }
 }
 
 function initMap(){
-  map = L.map("map",{zoomControl:true}).setView([41.7641, 86.1453],6);
-  baseTile = L.tileLayer(tileUrls[theme],{
-    attribution:'© AutoNavi', subdomains:"abcd", maxZoom:19
-  }).addTo(map);
-  layerGroup = L.layerGroup().addTo(map);
+  if (typeof L === "undefined") {
+      console.warn("Leaflet map library could not be loaded.");
+      var mapEl = document.getElementById("map");
+      if(mapEl) {
+          mapEl.innerHTML = "<div style=\"display:flex; height:100%; align-items:center; justify-content:center; color:var(--muted); padding:20px; text-align:center;\">地圖腳本被瀏覽器封鎖。<br>這通常是因為網路環境、VPN 或廣告阻擋工具攔截了地圖庫資源。<br>但不用擔心，左側的行程導覽不受影響，您可以正常閱覽。</div>";
+      }
+      return;
+  }
+  try {
+      map = L.map("map",{zoomControl:true}).setView([41.7641, 86.1453],6);
+      baseTile = L.tileLayer(tileUrls[theme],{
+        attribution:'© AutoNavi', subdomains:"abcd", maxZoom:19
+      }).addTo(map);
+      layerGroup = L.layerGroup().addTo(map);
+  } catch(e) {
+      console.error("Map initialization failed", e);
+  }
 }
 
 function renderMap(){
+  if(typeof L === "undefined" || !layerGroup) return;
+  
   if(currentDay === "global") {
       renderGlobalMap();
       return;
   }
   layerGroup.clearLayers();
-  const isArch = currentDay==="arch";
-  const stops = isArch ? archivedList() : stopsForDay(currentDay);
-  const pts = [];
-  stops.forEach((s,idx)=>{
+  var isArch = currentDay==="arch";
+  var stops = isArch ? archivedList() : stopsForDay(currentDay);
+  var pts = [];
+  stops.forEach(function(s,idx){
     if(!s.coords) return;
-    pts.push({s, idx});
-    const cls = s.type==="food"?"food":(s.type==="hotel"?"hotel":(s.icon==="✈️"||s.icon==="🛫"||s.icon==="🛬"?"flight":""));
-    const icon = L.divIcon({className:"", html:`<div class="numIcon ${cls}" style="width:26px;height:26px;font-size:13px">${idx+1}</div>`, iconSize:[26,26], iconAnchor:[13,13]});
-    L.marker(s.coords,{icon}).addTo(layerGroup)
-      .bindPopup(`<b>${idx+1}. ${s.name}</b><br>${s.t||""}${s.price?`<br>💴 ${s.price}`:""}${s.hours?`<br>🕐 ${s.hours}`:""}`)
-      .on("click",()=>highlightCard(idx));
+    pts.push({s: s, idx: idx});
+    var cls = s.type==="food"?"food":(s.type==="hotel"?"hotel":(s.icon==="✈️"||s.icon==="🛫"||s.icon==="🛬"?"flight":""));
+    var icon = L.divIcon({className:"", html:"<div class=\"numIcon " + cls + "\" style=\"width:26px;height:26px;font-size:13px\">" + (idx+1) + "</div>", iconSize:[26,26], iconAnchor:[13,13]});
+    
+    var popupTxt = "<b>" + (idx+1) + ". " + s.name + "</b><br>" + (s.t||"") + (s.price?"<br>💴 "+s.price:"") + (s.hours?"<br>🕐 "+s.hours:"");
+    L.marker(s.coords,{icon: icon}).addTo(layerGroup)
+      .bindPopup(popupTxt)
+      .on("click", function(){ highlightCard(idx); });
   });
   
   if(!isArch){
-    for(let i=0;i<pts.length-1;i++){
-      const a = pts[i], b = pts[i+1];
-      const lg = resolveLeg(a.s, b.s);
-      const style = (lg && lg.mode==="flight")
-        ? {color:"#7752d5", weight:3, dashArray:"6 8", opacity:.8}
-        : {color:"#d9a94c", weight:3, opacity:.85};
+    for(var i=0;i<pts.length-1;i++){
+      var a = pts[i], b = pts[i+1];
+      var lg = resolveLeg(a.s, b.s);
+      var style = (lg && lg.mode==="flight")
+        ? {color:"#7752d5", weight:3, dashArray:"6 8", opacity:0.8}
+        : {color:"#d9a94c", weight:3, opacity:0.85};
       L.polyline([a.s.coords, b.s.coords], style).addTo(layerGroup);
     }
   }
   if(pts.length > 1){
-    map.fitBounds(L.latLngBounds(pts.map(p=>p.s.coords)).pad(0.18));
+    map.fitBounds(L.latLngBounds(pts.map(function(p){return p.s.coords})).pad(0.18));
   } else if (pts.length === 1) {
     map.flyTo(pts[0].s.coords, 10);
   }
 }
 
-function focusStop(idx){
+window.focusStop = function(idx){
   if(currentDay === "global") return;
-  const stops = currentDay==="arch" ? archivedList() : stopsForDay(currentDay);
-  const s = stops[idx];
-  if(s && s.coords){ map.flyTo(s.coords, Math.max(map.getZoom(),12), {duration:.6}); }
+  var stops = currentDay==="arch" ? archivedList() : stopsForDay(currentDay);
+  var s = stops[idx];
+  if(s && s.coords && map){ 
+      try { map.flyTo(s.coords, Math.max(map.getZoom(),12), {duration:0.6}); } catch(e){} 
+  }
   highlightCard(idx);
 }
 function highlightCard(idx){
-  document.querySelectorAll(".card").forEach(c=>c.classList.remove("focus"));
-  const el = document.getElementById("card"+idx);
+  document.querySelectorAll(".card").forEach(function(c){ c.classList.remove("focus"); });
+  var el = document.getElementById("card"+idx);
   if(el){ el.classList.add("focus"); el.scrollIntoView({behavior:"smooth", block:"nearest"}); }
 }
 
 /* ============ ADD / EDIT ACTIVITY (with select time logic) ============ */
-const modal = document.getElementById("modal");
-let editCid = null, editBid = null;
+var modal = document.getElementById("modal");
+var editCid = null, editBid = null;
 
 function initTimeSelects() {
-    let hOpts = '<option value="">--</option>';
-    for(let i=0; i<24; i++) hOpts += `<option value="${i.toString().padStart(2,'0')}">${i.toString().padStart(2,'0')}</option>`;
-    document.getElementById('fHour').innerHTML = hOpts;
-    document.getElementById('fMin').innerHTML = '<option value="">--</option><option value="00">00</option><option value="15">15</option><option value="30">30</option><option value="45">45</option>';
+    var hOpts = '<option value="">--</option>';
+    for(var i=0; i<24; i++) {
+        var strI = i < 10 ? "0" + i : i.toString();
+        hOpts += '<option value="' + strI + '">' + strI + '</option>';
+    }
+    var hEl = document.getElementById('fHour');
+    var mEl = document.getElementById('fMin');
+    if (hEl) hEl.innerHTML = hOpts;
+    if (mEl) mEl.innerHTML = '<option value="">--</option><option value="00">00</option><option value="15">15</option><option value="30">30</option><option value="45">45</option>';
 }
 initTimeSelects();
 
 function setTimeSelects(timeStr) {
+    var hEl = document.getElementById('fHour');
+    var mEl = document.getElementById('fMin');
+    if (!hEl || !mEl) return;
     if(!timeStr || timeStr === "—") {
-        document.getElementById('fHour').value = "";
-        document.getElementById('fMin').value = "";
+        hEl.value = "";
+        mEl.value = "";
         return;
     }
-    const parts = timeStr.split(":");
+    var parts = timeStr.split(":");
     if(parts.length === 2) {
-        document.getElementById('fHour').value = parts[0].trim();
-        const m = parseInt(parts[1].trim());
-        const snappedM = (Math.round(m / 15) * 15 % 60).toString().padStart(2, '0');
-        document.getElementById('fMin').value = snappedM;
+        hEl.value = parts[0].trim();
+        var m = parseInt(parts[1].trim());
+        var snappedM = (Math.round(m / 15) * 15 % 60);
+        var strM = snappedM < 10 ? "0" + snappedM : snappedM.toString();
+        mEl.value = strM;
     }
 }
 
 function getTimeSelects() {
-    const h = document.getElementById('fHour').value;
-    const m = document.getElementById('fMin').value;
-    return (h && m) ? `${h}:${m}` : "";
+    var hEl = document.getElementById('fHour');
+    var mEl = document.getElementById('fMin');
+    var h = hEl ? hEl.value : "";
+    var m = mEl ? mEl.value : "";
+    return (h && m) ? h + ":" + m : "";
 }
 
 function openModal(isEdit){
-  const sel = document.getElementById("fDay");
-  sel.innerHTML = DAYS.map((d,i)=>`<option value="${i}" ${i===currentDay?"selected":""}>第${i+1}天 ${d.date}</option>`).join("");
-  document.getElementById("mStatus").textContent = "";
-  document.querySelector(".mbox h3").textContent = isEdit ? "✎ 編輯活動" : "＋ 新增活動 / 景點";
-  document.getElementById("mSave").textContent = isEdit ? "儲存變更" : "查詢並加入";
-  document.getElementById("advFields").style.display = "";
-  document.getElementById("mReset").style.display = "none";
-  modal.classList.add("open");
+  var sel = document.getElementById("fDay");
+  if(sel) {
+      sel.innerHTML = DAYS.map(function(d,i){
+          var selAttr = (i===currentDay) ? "selected" : "";
+          return "<option value=\"" + i + "\" " + selAttr + ">第" + (i+1) + "天 " + d.date + "</option>";
+      }).join("");
+  }
+  var mStatus = document.getElementById("mStatus");
+  if(mStatus) mStatus.textContent = "";
+  var header = document.querySelector(".mbox h3");
+  if(header) header.textContent = isEdit ? "✎ 編輯活動" : "＋ 新增活動 / 景點";
+  var mSave = document.getElementById("mSave");
+  if(mSave) mSave.textContent = isEdit ? "儲存變更" : "查詢並加入";
+  
+  var adv = document.getElementById("advFields");
+  if(adv) adv.style.display = "";
+  var mReset = document.getElementById("mReset");
+  if(mReset) mReset.style.display = "none";
+  if(modal) modal.classList.add("open");
 }
-function editBuiltin(bid){
-  let base=null, di=null;
-  DAYS.forEach((dd,i)=>dd.stops.forEach(s=>{ if(s.bid===bid){base=s;di=i;} }));
+
+window.editBuiltin = function(bid){
+  var base=null, di=null;
+  DAYS.forEach(function(dd,i){
+      dd.stops.forEach(function(s){ if(s.bid===bid){base=s;di=i;} });
+  });
   if(!base) return;
   editBid = bid; editCid = null;
   openModal(true);
-  document.querySelector(".mbox h3").textContent = "✎ 調整時間／日期：" + base.name;
-  document.getElementById("advFields").style.display = "none";
-  document.getElementById("mReset").style.display = overrides[bid] ? "inline-block" : "none";
-  const ov = overrides[bid]||{};
-  document.getElementById("fDay").value = (ov.day===undefined)?di:ov.day;
+  var header = document.querySelector(".mbox h3");
+  if(header) header.textContent = "✎ 調整時間／日期：" + base.name;
+  var adv = document.getElementById("advFields");
+  if(adv) adv.style.display = "none";
+  var mReset = document.getElementById("mReset");
+  if(mReset) mReset.style.display = overrides[bid] ? "inline-block" : "none";
+  
+  var ov = overrides[bid]||{};
+  var fDay = document.getElementById("fDay");
+  if(fDay) fDay.value = (ov.day===undefined)?di:ov.day;
   setTimeSelects(ov.t || base.t);
 }
-document.getElementById("mReset").onclick = ()=>{
-  if(editBid){ delete overrides[editBid]; saveOverrides(); }
-  editBid = null;
-  modal.classList.remove("open");
-  selectDay(currentDay);
-};
+
+var mResetBtn = document.getElementById("mReset");
+if(mResetBtn) {
+    mResetBtn.onclick = function(){
+      if(editBid){ delete overrides[editBid]; saveOverrides(); }
+      editBid = null;
+      if(modal) modal.classList.remove("open");
+      selectDay(currentDay);
+    };
+}
+
 function clearForm(){
   setTimeSelects("");
-  ["fName","fUrl","fDur","fFee","fSees","fNote"].forEach(id=>document.getElementById(id).value="");
-  document.getElementById("fType").value = "sight";
+  var ids = ["fName","fUrl","fDur","fFee","fSees","fNote"];
+  ids.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.value="";
+  });
+  var typeEl = document.getElementById("fType");
+  if(typeEl) typeEl.value = "sight";
 }
-function editCustom(cid){
-  let found=null, day=null;
-  for(const d in customStops){
-    const s=(customStops[d]||[]).find(x=>x.cid===cid);
-    if(s){found=s;day=+d;break}
+
+window.editCustom = function(cid){
+  var found=null, day=null;
+  for(var d in customStops){
+    var list = customStops[d] || [];
+    for(var i=0; i<list.length; i++){
+        if(list[i].cid === cid) { found=list[i]; day=+d; break; }
+    }
+    if(found) break;
   }
   if(!found) return;
   editCid = cid; editBid = null;
   openModal(true);
-  document.getElementById("fDay").value = day;
+  
+  var fDay = document.getElementById("fDay");
+  if(fDay) fDay.value = day;
   setTimeSelects(found.t);
-  document.getElementById("fName").value = found.name;
-  document.getElementById("fType").value = found.type||"sight";
-  document.getElementById("fUrl").value = found.url||"";
-  document.getElementById("fDur").value = found.dur||"";
-  document.getElementById("fFee").value = found.price||"";
-  document.getElementById("fSees").value = (found.sees||[]).join("\n");
-  document.getElementById("fNote").value = found.hours||"";
+  
+  var ids = ["fName","fType","fUrl","fDur","fFee","fNote"];
+  var props = ["name","type","url","dur","price","hours"];
+  ids.forEach(function(id, i) {
+      var el = document.getElementById(id);
+      if(el) el.value = found[props[i]] || "";
+  });
+  var fSees = document.getElementById("fSees");
+  if(fSees) fSees.value = (found.sees||[]).join("\n");
 }
-document.getElementById("mCancel").onclick = ()=>modal.classList.remove("open");
-modal.onclick = e=>{ if(e.target===modal) modal.classList.remove("open"); };
+
+var mCancel = document.getElementById("mCancel");
+if(mCancel) mCancel.onclick = function(){ if(modal) modal.classList.remove("open"); };
+if(modal) modal.onclick = function(e){ if(e.target===modal) modal.classList.remove("open"); };
 
 /* Open Original PDF Text Modal */
-document.getElementById("origBtn").onclick = () => document.getElementById("pdfModal").classList.add("open");
-document.getElementById("pdfClose").onclick = () => document.getElementById("pdfModal").classList.remove("open");
-document.getElementById("pdfModal").onclick = (e) => { if(e.target===document.getElementById("pdfModal")) document.getElementById("pdfModal").classList.remove("open"); };
+var origBtn = document.getElementById("origBtn");
+var pdfModal = document.getElementById("pdfModal");
+var pdfClose = document.getElementById("pdfClose");
+if(origBtn) origBtn.onclick = function(){ if(pdfModal) pdfModal.classList.add("open"); };
+if(pdfClose) pdfClose.onclick = function(){ if(pdfModal) pdfModal.classList.remove("open"); };
+if(pdfModal) pdfModal.onclick = function(e){ if(e.target===pdfModal) pdfModal.classList.remove("open"); };
 
-document.getElementById("mSave").onclick = async ()=>{
-  if(editBid){
-    const day = +document.getElementById("fDay").value;
-    const t = getTimeSelects();
-    let di = null;
-    DAYS.forEach((dd,i)=>dd.stops.forEach(s=>{ if(s.bid===editBid) di=i; }));
-    overrides[editBid] = {};
-    if(t) overrides[editBid].t = t;
-    if(day!==di) overrides[editBid].day = day;
-    if(!overrides[editBid].t && overrides[editBid].day===undefined) delete overrides[editBid];
-    saveOverrides();
-    modal.classList.remove("open");
-    editBid = null;
-    selectDay(day);
-    return;
-  }
-  const name = document.getElementById("fName").value.trim();
-  const day = +document.getElementById("fDay").value;
-  const time = getTimeSelects() || "—";
-  const type = document.getElementById("fType").value;
-  const url = document.getElementById("fUrl").value.trim();
-  const note = document.getElementById("fNote").value.trim();
-  const dur = document.getElementById("fDur").value.trim();
-  const fee = document.getElementById("fFee").value.trim();
-  const seesArr = document.getElementById("fSees").value.split("\n").map(x=>x.trim()).filter(Boolean);
-  const status = document.getElementById("mStatus");
-  if(!name){ status.textContent = "請輸入名稱"; return; }
-
-  let prev = null;
-  if(editCid){
-    for(const d in customStops){
-      const i = (customStops[d]||[]).findIndex(x=>x.cid===editCid);
-      if(i>-1){ prev = customStops[d][i]; customStops[d].splice(i,1); break; }
-    }
-  }
-
-  let coords = (prev && prev.name===name) ? prev.coords : null;
-  let wiki   = (prev && prev.name===name) ? prev.wiki   : null;
-  let imgUrl = (prev && prev.name===name) ? prev.imgUrl : null;
-  let desc   = (prev && prev.name===name && prev.desc) ? prev.desc : "";
-  if(coords){ status.textContent = "💾 儲存中…"; }
-  else { status.textContent = "🔍 正在查詢座標與資料…"; }
-  let autoHours="", autoFee="", autoUrl="", autoSees=null;
-  if(!coords){
-    const harvest = (r0)=>{
-      coords = [+r0.lat, +r0.lon];
-      const ex = r0.extratags || {};
-      if(ex.opening_hours) autoHours = ex.opening_hours;
-      if(ex.charge) autoFee = ex.charge;
-      else if(ex.fee==="yes") autoFee = "收費（金額請查官網）";
-      else if(ex.fee==="no") autoFee = "免費";
-      const w = ex.website || ex["contact:website"];
-      if(w) autoUrl = w;
-    };
-    try{
-      const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&extratags=1&accept-language=zh&q=${encodeURIComponent(name)}`);
-      const j = await r.json();
-      if(j[0]) harvest(j[0]);
-    }catch(e){}
-    try{
-      const r = await fetch(`https://zh.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`);
-      if(r.ok){
-        const j = await r.json();
-        if(j.extract){
-          desc = j.extract.slice(0,180);
-          const sents = j.extract.split(/[。！；]/).map(x=>x.trim()).filter(x=>x.length>=10).slice(0,3);
-          if(sents.length) autoSees = sents.map(x=>x+"。");
-        }
-        if(j.thumbnail) imgUrl = j.thumbnail.source;
-        wiki = name;
+var mSaveBtn = document.getElementById("mSave");
+if(mSaveBtn) {
+    mSaveBtn.onclick = async function(){
+      if(editBid){
+        var fDayEl = document.getElementById("fDay");
+        var day = fDayEl ? +fDayEl.value : currentDay;
+        var t = getTimeSelects();
+        var di = null;
+        DAYS.forEach(function(dd,i){
+            dd.stops.forEach(function(s){ if(s.bid===editBid) di=i; });
+        });
+        overrides[editBid] = {};
+        if(t) overrides[editBid].t = t;
+        if(day!==di) overrides[editBid].day = day;
+        if(!overrides[editBid].t && overrides[editBid].day===undefined) delete overrides[editBid];
+        saveOverrides();
+        if(modal) modal.classList.remove("open");
+        editBid = null;
+        selectDay(day);
+        return;
       }
-    }catch(e){}
-    const got = [];
-    if(autoHours) got.push("營業時間");
-    if(autoFee) got.push("費用");
-    if(autoUrl) got.push("官網");
-    if(desc) got.push("簡介");
-    if(got.length) status.textContent = "✅ 已自動帶入：" + got.join("、") + "（可隨時用 ✎ 編輯修改）";
-  }
+      
+      var elVal = function(id) { 
+          var el = document.getElementById(id); 
+          return el ? el.value.trim() : ""; 
+      };
+      
+      var name = elVal("fName");
+      var fDayEl = document.getElementById("fDay");
+      var day = fDayEl ? +fDayEl.value : currentDay;
+      var time = getTimeSelects() || "—";
+      var fTypeEl = document.getElementById("fType");
+      var type = fTypeEl ? fTypeEl.value : "sight";
+      var url = elVal("fUrl");
+      var note = elVal("fNote");
+      var dur = elVal("fDur");
+      var fee = elVal("fFee");
+      
+      var fSeesEl = document.getElementById("fSees");
+      var seesArr = [];
+      if(fSeesEl && fSeesEl.value) {
+          var lines = fSeesEl.value.split("\n");
+          for(var i=0; i<lines.length; i++) {
+              var trimmed = lines[i].trim();
+              if(trimmed) seesArr.push(trimmed);
+          }
+      }
+      
+      var status = document.getElementById("mStatus");
+      if(!name){ if(status) status.textContent = "請輸入名稱"; return; }
 
-  if(!coords){ status.textContent = "⚠️ 找不到座標，已加入清單但不顯示於地圖（可用「✎ 編輯」換更精確名稱重試）。"; }
-  const entry = {
-    cid: editCid || ("c"+Date.now()),
-    t:time, name, type, icon: type==="food"?"🍽️":(type==="hotel"?"🏨":"📍"),
-    coords, wiki, imgUrl, desc: desc || "", url: url || autoUrl || "", hours: note || autoHours || "", price: fee || autoFee || "", dur, sees: seesArr.length ? seesArr : (autoSees && autoSees.length ? autoSees : undefined)
-  };
-  if(!customStops[day]) customStops[day] = [];
-  customStops[day].push(entry);
-  saveCustom();
-  const hadCoords = !!coords;
-  setTimeout(()=>{
-    modal.classList.remove("open");
-    clearForm(); editCid = null;
-    selectDay(day);
-  }, hadCoords?300:1600);
-};
+      var prev = null;
+      if(editCid){
+        for(var d in customStops){
+          var list = customStops[d] || [];
+          for(var idx=0; idx<list.length; idx++){
+              if(list[idx].cid === editCid) {
+                  prev = list[idx];
+                  list.splice(idx, 1);
+                  break;
+              }
+          }
+          if(prev) break;
+        }
+      }
+
+      var coords = (prev && prev.name===name) ? prev.coords : null;
+      var wiki   = (prev && prev.name===name) ? prev.wiki   : null;
+      var imgUrl = (prev && prev.name===name) ? prev.imgUrl : null;
+      var desc   = (prev && prev.name===name && prev.desc) ? prev.desc : "";
+      
+      if(status) {
+          if(coords){ status.textContent = "💾 儲存中…"; }
+          else { status.textContent = "🔍 正在查詢座標與資料…"; }
+      }
+      
+      var autoHours="", autoFee="", autoUrl="", autoSees=null;
+      if(!coords){
+        var harvest = function(r0){
+          coords = [+r0.lat, +r0.lon];
+          var ex = r0.extratags || {};
+          if(ex.opening_hours) autoHours = ex.opening_hours;
+          if(ex.charge) autoFee = ex.charge;
+          else if(ex.fee==="yes") autoFee = "收費（金額請查官網）";
+          else if(ex.fee==="no") autoFee = "免費";
+          var w = ex.website || ex["contact:website"];
+          if(w) autoUrl = w;
+        };
+        try{
+          var r1 = await fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&extratags=1&accept-language=zh&q=" + encodeURIComponent(name));
+          var j1 = await r1.json();
+          if(j1[0]) harvest(j1[0]);
+        }catch(e){}
+        try{
+          var r2 = await fetch("https://zh.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(name));
+          if(r2.ok){
+            var j2 = await r2.json();
+            if(j2.extract){
+              desc = j2.extract.slice(0,180);
+              var sentsRaw = j2.extract.split(/[。！；]/);
+              var sents = [];
+              for(var k=0; k<sentsRaw.length; k++) {
+                  var sTrim = sentsRaw[k].trim();
+                  if(sTrim.length >= 10) sents.push(sTrim + "。");
+                  if(sents.length >= 3) break;
+              }
+              if(sents.length) autoSees = sents;
+            }
+            if(j2.thumbnail) imgUrl = j2.thumbnail.source;
+            wiki = name;
+          }
+        }catch(e){}
+        var got = [];
+        if(autoHours) got.push("營業時間");
+        if(autoFee) got.push("費用");
+        if(autoUrl) got.push("官網");
+        if(desc) got.push("簡介");
+        if(got.length && status) status.textContent = "✅ 已自動帶入：" + got.join("、") + "（可隨時用 ✎ 編輯修改）";
+      }
+
+      if(!coords && status){ status.textContent = "⚠️ 找不到座標，已加入清單但不顯示於地圖（可用「✎ 編輯」換更精確名稱重試）。"; }
+      var entry = {
+        cid: editCid || ("c"+Date.now()),
+        t:time, name:name, type:type, icon: (type==="food"?"🍽️":(type==="hotel"?"🏨":"📍")),
+        coords:coords, wiki:wiki, imgUrl:imgUrl, desc: (desc || ""), url: (url || autoUrl || ""), hours: (note || autoHours || ""), price: (fee || autoFee || ""), dur:dur, sees: (seesArr.length ? seesArr : (autoSees && autoSees.length ? autoSees : undefined))
+      };
+      if(!customStops[day]) customStops[day] = [];
+      customStops[day].push(entry);
+      saveCustom();
+      var hadCoords = !!coords;
+      setTimeout(function(){
+        if(modal) modal.classList.remove("open");
+        clearForm(); editCid = null;
+        selectDay(day);
+      }, hadCoords?300:1600);
+    };
+}
 
 /* ============ EXPORT / IMPORT ============ */
-document.getElementById("expBtn").onclick = ()=>{
-  const blob = new Blob([JSON.stringify({app:"xinjiang2026", v:1, custom:customStops, overrides}, null, 2)], {type:"application/json"});
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "nj-customizations.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
-};
-document.getElementById("impBtn").onclick = ()=>document.getElementById("impFile").click();
-document.getElementById("impFile").onchange = (e)=>{
-  const f = e.target.files[0];
-  if(!f) return;
-  const reader = new FileReader();
-  reader.onload = ()=>{
-    try{
-      const j = JSON.parse(reader.result);
-      const data = j.custom || j;
-      if(typeof data !== "object") throw 0;
-      for(const d in data){
-        if(!Array.isArray(data[d])) continue;
-        if(!customStops[d]) customStops[d] = [];
-        data[d].forEach(s=>{
-          if(!s || !s.name) return;
-          customStops[d] = customStops[d].filter(x=>x.cid!==s.cid);
-          customStops[d].push(s);
-        });
-      }
-      if(j.overrides && typeof j.overrides==="object"){ Object.assign(overrides, j.overrides); saveOverrides(); }
-      saveCustom(); selectDay(currentDay);
-      alert("匯入成功！自訂活動與時間/封存調整已合併。");
-    }catch(err){ alert("匯入失敗：檔案格式不正確。請選擇先前由本應用匯出的 JSON 檔。"); }
-    e.target.value = "";
-  };
-  reader.readAsText(f);
-};
+var expBtn = document.getElementById("expBtn");
+if(expBtn) {
+    expBtn.onclick = function(){
+      var blob = new Blob([JSON.stringify({app:"xinjiang2026", v:1, custom:customStops, overrides:overrides}, null, 2)], {type:"application/json"});
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "nj-customizations.json";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    };
+}
+
+var impBtn = document.getElementById("impBtn");
+var impFile = document.getElementById("impFile");
+if(impBtn && impFile) {
+    impBtn.onclick = function(){ impFile.click(); };
+    impFile.onchange = function(e){
+      var f = e.target.files[0];
+      if(!f) return;
+      var reader = new FileReader();
+      reader.onload = function(){
+        try{
+          var j = JSON.parse(reader.result);
+          var data = j.custom || j;
+          if(typeof data !== "object") throw 0;
+          for(var d in data){
+            if(!Array.isArray(data[d])) continue;
+            if(!customStops[d]) customStops[d] = [];
+            data[d].forEach(function(s){
+              if(!s || !s.name) return;
+              customStops[d] = customStops[d].filter(function(x){ return x.cid!==s.cid; });
+              customStops[d].push(s);
+            });
+          }
+          if(j.overrides && typeof j.overrides==="object"){ Object.assign(overrides, j.overrides); saveOverrides(); }
+          saveCustom(); selectDay(currentDay);
+          alert("匯入成功！自訂活動與時間/封存調整已合併。");
+        }catch(err){ alert("匯入失敗：檔案格式不正確。請選擇先前由本應用匯出的 JSON 檔。"); }
+        e.target.value = "";
+      };
+      reader.readAsText(f);
+    };
+}
 
 /* ============ THEME ============ */
 function applyTheme(){
   document.body.classList.toggle("light", theme==="light");
-  document.getElementById("themeBtn").textContent = theme==="light" ? "🌙 夜間模式" : "☀️ 日間模式";
+  var tBtn = document.getElementById("themeBtn");
+  if(tBtn) tBtn.textContent = theme==="light" ? "🌙 夜間模式" : "☀️ 日間模式";
   try{ localStorage.setItem("nj2026_theme", theme); }catch(e){}
 }
-document.getElementById("themeBtn").onclick = ()=>{
-  theme = (theme==="light") ? "dark" : "light";
-  applyTheme();
-};
-
-function removeCustom(cid){
-  for(const d in customStops){ customStops[d] = customStops[d].filter(s=>s.cid!==cid); }
-  saveCustom(); selectDay(currentDay);
+var themeBtn = document.getElementById("themeBtn");
+if(themeBtn) {
+    themeBtn.onclick = function(){
+      theme = (theme==="light") ? "dark" : "light";
+      applyTheme();
+    };
 }
 
-/* ============ INIT ============ */
+window.removeCustom = function(cid){
+  for(var d in customStops){ 
+      customStops[d] = customStops[d].filter(function(s){ return s.cid!==cid; }); 
+  }
+  saveCustom(); 
+  selectDay(currentDay);
+}
+
+/* ============ BOOT APP ============ */
 initMap();
 applyTheme();
 selectDay("global"); // Start with Global View by default
+
+  } catch (err) {
+      console.error("FATAL APP ERROR:", err);
+      var leftPanel = document.getElementById("left");
+      if (leftPanel) {
+          leftPanel.innerHTML = "<div style=\"padding: 20px; background: #2a1111; border-radius: 10px; border: 1px solid #c84b4b; color: #e9e7e0; margin: 15px;\">" +
+              "<h2 style=\"color: #c84b4b; margin-bottom: 10px;\">⚠️ 程式發生錯誤 (App Error)</h2>" +
+              "<p style=\"font-size: 0.9rem; margin-bottom: 15px;\">很抱歉，應用程式在讀取您的資料時遇到了衝突。這通常是因為舊版儲存資料不相容所導致。</p>" +
+              "<div style=\"background: #161922; padding: 12px; border-radius: 6px; margin-bottom: 15px; font-family: monospace; font-size: 0.8rem; overflow-x: auto; color: #9aa0ad;\">" +
+                  err.message + "<br><br>" + err.stack +
+              "</div>" +
+              "<button onclick=\"localStorage.removeItem('nj2026_custom_v1'); localStorage.removeItem('nj2026_overrides_v1'); alert('資料已重設，即將重新載入頁面。'); location.reload();\" " +
+                      "style=\"background: #c84b4b; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.9rem;\">" +
+                  "🔄 重設本機儲存資料 (Reset App Data)" +
+              "</button>" +
+          "</div>";
+      }
+  }
+})();
 </script>
 </body>
 </html>
