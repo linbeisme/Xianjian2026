@@ -57,7 +57,6 @@ main{display:grid;grid-template-columns:minmax(390px,46%) 1fr;gap:0;height:calc(
 #mapWrap{position:relative;border-left:1px solid var(--line)}
 #map{height:100%;width:100%;background:#0e1015}
 
-/* Map Dark Mode Filter */
 body:not(.light) .leaflet-tile-pane { filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%); }
 
 .dayHead{margin-bottom:14px}
@@ -98,7 +97,6 @@ body:not(.light) .leaflet-tile-pane { filter: invert(100%) hue-rotate(180deg) br
 .leg a:hover{text-decoration:underline}
 .leg .alt{color:var(--muted);font-size:.76rem;margin-top:2px;opacity:.85}
 
-/* modals */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:3000}
 .modal-overlay.open{display:flex}
 .mbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;width:min(480px,92vw);padding:22px;box-shadow:var(--shadow)}
@@ -125,7 +123,6 @@ body:not(.light) .leaflet-tile-pane { filter: invert(100%) hue-rotate(180deg) br
 #legend{position:absolute;bottom:14px;left:14px;z-index:900;background:rgba(22,25,34,.92);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:.74rem;color:var(--muted)}
 #legend b{color:var(--text)}
 
-/* PDF Table styling */
 .pdf-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; color: var(--text); margin-top: 10px; }
 .pdf-table th, .pdf-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
 .pdf-table th { background: var(--panel); color: var(--gold); font-weight: bold; white-space: nowrap; }
@@ -133,7 +130,6 @@ body:not(.light) .leaflet-tile-pane { filter: invert(100%) hue-rotate(180deg) br
 body.light .pdf-table th { background: #e7e2d2; color: #a8851f; }
 body.light .pdf-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
 
-/* Google Translate specific styling to fit header */
 .goog-te-gadget-simple { background-color: var(--panel) !important; border: 1px solid var(--line) !important; border-radius: 8px !important; padding: 4px 8px !important; }
 .goog-te-gadget-simple span { color: var(--text) !important; font-family: inherit !important; }
 .goog-te-gadget-icon { display: none !important; }
@@ -200,7 +196,7 @@ body.light .pdf-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
 <div id="modal" class="modal-overlay">
   <div class="mbox">
     <h3>＋ 新增活動 / 景點</h3>
-    <p class="hint">輸入名稱後自動從 OpenStreetMap 取得座標、從維基百科抓取簡介與圖片。新增項目儲存在本機瀏覽器，可用右上「⬇ 匯出」備份、換裝置後「⬆ 匯入」還原。</p>
+    <p class="hint">輸入名稱後自動從 OpenStreetMap 取得座標、從維基百科抓取簡介與真實圖片。新增項目儲存在本機瀏覽器，可用右上「⬇ 匯出」備份、換裝置後「⬆ 匯入」還原。</p>
     <div class="mrow">
       <div><label>加入哪一天</label><select id="fDay"></select></div>
       <div>
@@ -243,30 +239,36 @@ body.light .pdf-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
       <button id="pdfClose" style="background:none;border:none;color:var(--muted);font-size:1.6rem;cursor:pointer;line-height:1;">×</button>
     </div>
     <div style="flex:1; overflow-y:auto; background: var(--panel2); padding: 16px; border-radius: 8px;">
-      <h4 style="color:var(--gold); margin-bottom: 10px;">金秋南疆 汗血寶馬、沙漠胡楊、龜茲文化、喀什風情、帕米爾高原風光18天</h4>
+      <h4 style="color:var(--gold); margin-bottom: 6px;">金秋南疆 汗血寶馬、沙漠胡楊、龜茲文化、喀什風情、帕米爾高原風光18天</h4>
+      <div style="font-size:0.8rem; color:var(--muted); margin-bottom:12px; line-height:1.6;">
+        <b>出團資訊：</b>2026/10/22 ～ 2026/11/08（共18天）<br>
+        <b>集合時間：</b>115年10月22日 10:30｜桃園國際機場第二航廈3樓4號報到櫃檯<br>
+        <b>隨團人員：</b>領隊 莊正威小姐 (0980-584887)｜新疆康輝 程亮 (13227076579)、馬曉倩 (18160230307)<br>
+        <b>旅行社聯絡：</b>晨安旅行社 潘小姐 (0911-124435)、林先生 (0932-196788)
+      </div>
       <table class="pdf-table">
         <thead>
           <tr><th>天數</th><th>日期/航班</th><th>行程內容</th><th>餐食</th><th>住宿</th></tr>
         </thead>
         <tbody>
-          <tr><td>01</td><td>10/22 桃園飛北京 CA186<br>北京飛烏魯木齊 CA1295<br>1735/2155</td><td>接機後送回酒店。<br>車程時間:烏魯木齊機場→(約20KM)烏魯木齊市區</td><td>機上餐<br>接機水果餐盒+新疆饢餅</td><td>希爾頓花園/希爾頓歡朋/美豪麗致酒店-旗艦店 或同級</td></tr>
-          <tr><td>02</td><td>10/23 烏魯木齊 - 庫爾勒</td><td>新疆古生態園(硅化木保護基地、野馬美術館、汗血寶馬基地)、穿越天山勝利隧道<br>車程時間:烏魯木齊→(約330KM)庫爾勒</td><td>早:酒店內<br>午:中式 60<br>晚:西域迎賓宴 100</td><td>山水梨城賓館 / 庫爾勒萬怡酒店 或同級</td></tr>
-          <tr><td>03</td><td>10/24 庫爾勒</td><td>羅布人村寨(含區間車)、塔克拉瑪幹沙漠風光、沙漠胡楊風光、體驗沙漠騎駱駝<br>車程時間:庫爾勒→(約80KM)羅佈人村寨</td><td>早:酒店內<br>午:中式 60<br>晚:梨城風味 80</td><td>山水梨城賓館 / 庫爾勒萬怡酒店 或同級</td></tr>
-          <tr><td>04</td><td>10/25 庫爾勒 - 庫車</td><td>塔里木胡楊林公園(含區間車)、沙漠胡楊風光<br>車程時間:庫爾勒→(約220KM)塔里木胡楊林→(約140KM)庫車</td><td>早:酒店內<br>午:中式 60<br>晚:龜茲風味 80</td><td>庫車迎賓館 / 庫車飯店五星樓 / 希爾頓惠庭酒店 或同級</td></tr>
-          <tr><td>05</td><td>10/26 庫車</td><td>天山神秘大峽谷、熱斯坦街(安排下午茶)、庫車大馕城(博物館、打饢體驗、樂舞表演)</td><td>早:酒店內<br>午:中式 60<br>晚:亞克西姆風味 100</td><td>庫車迎賓館 / 庫車飯店五星樓 / 希爾頓惠庭酒店 或同級</td></tr>
-          <tr><td>06</td><td>10/27 庫車 - 拜城</td><td>庫車王府、克孜爾千佛洞(含專業講解)<br>車程時間:庫車→(約70KM)千佛洞→(約80KM)拜城</td><td>早:酒店內<br>午:中式 60<br>晚:拜城風味 80</td><td>拜城尊茂溫州酒店 或同級</td></tr>
-          <tr><td>07</td><td>10/28 拜城 - 阿拉爾</td><td>溫宿大峽谷(含區間車)<br>車程時間:拜城→(約130KM)大峽谷→(約140KM)阿拉爾</td><td>早:酒店內<br>午:中式 60<br>晚:新疆烤包子 80</td><td>塔河花園 / 塔河觀瀾 / 桉漫君悅酒店 或同級</td></tr>
-          <tr><td>08</td><td>10/29 阿拉爾 - 和田</td><td>沿第二條沙漠公路穿越塔克拉瑪幹沙漠、沙漠胡楊風光、和田夜市<br>車程時間:阿拉爾→(約440KM)和田</td><td>早:酒店內<br>午:途中 60<br>晚:和田夜市發餐費 100</td><td>和田迎賓館 / 希爾頓歡朋酒店 或同級</td></tr>
-          <tr><td>09</td><td>10/30 和田 - 澤普/莎車</td><td>澤普金胡楊國家森林公園(含區間車)<br>車程時間:和田→(約320KM)金胡楊→(約35KM)澤普</td><td>早:酒店內<br>午:中式 60<br>晚:紅柳烤肉 80</td><td>澤普金胡楊國際 / 莎車雲上居 / 莎車亞朵酒店 或同級</td></tr>
-          <tr><td>10</td><td>10/31 澤普/莎車 - 巴楚</td><td>莎車喀讚其老街、莎車王陵、巴楚紅海景區(含區間車)、水上胡楊風光</td><td>早:酒店內<br>午:中式 60<br>晚:巴楚烤魚風味 80</td><td>巴楚麗楓 / 巴楚全季 / 巴楚錦疆酒店 或同級</td></tr>
-          <tr><td>11</td><td>11/1 巴楚 - 喀什</td><td>沿途欣賞戈壁風光、高台民居、香妃園、汗巴扎夜市<br>車程時間:巴楚→(約300KM)喀什</td><td>早:酒店內<br>午:中式 60<br>晚:汗巴扎夜市發餐費 100</td><td>古城逸扉 / 東城假日 / 希爾頓惠庭酒店 或同級</td></tr>
-          <tr><td>12</td><td>11/2 喀什 - 烏恰</td><td>喀什古城開城儀式、喀什古城、職人街、彩虹巷、百年老茶館、艾提尕爾清真寺</td><td>早:酒店內<br>午:中式 60<br>晚:新疆手抓肉 80</td><td>美豪麗致酒店 / 維也納酒店 或同級</td></tr>
-          <tr><td>13</td><td>11/3 烏恰西极村 - 喀什</td><td>途徑七彩丹霞地貌、貝殼山、烏恰天山昆侖山交匯觀景臺、斯木哈納村(中國西極石碑)</td><td>早:酒店內<br>午:途中 60<br>晚:新疆烤全羊 180</td><td>古城逸扉 / 希爾頓歡朋 / 希爾頓惠庭酒店 或同級</td></tr>
-          <tr><td>14</td><td>11/4 喀什 - 塔什庫爾幹</td><td>蓋孜峽谷風光、中巴友誼公路、卡拉庫里湖、遠眺帕米爾高原雪山群、石頭城、金草灘</td><td>早:酒店內<br>午:途中 60<br>晚:高原牦牛肉 100</td><td>塔縣般藍酒店 / 全景星空酒店 或同級</td></tr>
-          <tr><td>15</td><td>11/5 塔縣</td><td>盤龍古道(換乘7座商務車,5人/車)、班底兒藍湖、托格倫夏村、塔吉克族家訪</td><td>早:酒店內<br>午:途中 60<br>晚:塔吉克風味 80</td><td>塔縣般藍酒店 / 全景星空酒店 或同級</td></tr>
-          <tr><td>16</td><td>11/6 塔什庫爾幹 - 喀什</td><td>塔合曼濕地觀景台、布倫口白沙湖<br>車程時間:塔什庫爾幹→盤龍古道環線→(約130KM)白沙湖→(約150KM)喀什</td><td>早:酒店內<br>午:途中 60<br>晚:西域歡送宴 100</td><td>喀什機場亞朵酒店 或同級</td></tr>
-          <tr><td>17</td><td>11/7 喀什飛北京 CA1216<br>2045/0145+1</td><td>早餐後自由活動，依航班乘機前往北京。<br>車程時間:喀什市區→(約10KM)喀什機場</td><td>早:酒店內<br>午:風味餐<br>晚:風味餐</td><td>北京機場附近酒店</td></tr>
-          <tr><td>18</td><td>11/8 北京飛台北 CA189<br>1355/1720</td><td>早餐後送機返回台北。</td><td>早:酒店內<br>午:機上餐</td><td>溫暖的家</td></tr>
+          <tr><td>01</td><td>10/22 桃園/北京 CA186 1300/1615<br>北京/烏魯木齊 CA1295 1735/2155</td><td>接機後送回酒店。<br>車程時間:烏魯木齊機場→(約20KM/0.5H)烏魯木齊市區</td><td>機上餐<br>接機水果餐盒+新疆饢餅</td><td>希爾頓花園酒店 准5★<br>0991-8756666</td></tr>
+          <tr><td>02</td><td>10/23 烏魯木齊 - 庫爾勒</td><td>新疆古生態園(硅化木保護基地、野馬美術館、汗血寶馬基地)、穿越天山勝利隧道(世界最長高速公路隧道)<br>車程時間:烏魯木齊市區→(約330KM/4.5H)庫爾勒市</td><td>早:酒店內<br>午:中式 60<br>晚:西域迎賓宴 100</td><td>山水梨城賓館 / 庫爾勒萬怡酒店 或同級 准5★</td></tr>
+          <tr><td>03</td><td>10/24 庫爾勒</td><td>羅布人村寨(含區間車)、塔克拉瑪幹沙漠風光、沙漠胡楊風光、體驗沙漠騎駱駝、孔雀河風光<br>車程時間:庫爾勒往返(約80KM+80KM)</td><td>早:酒店內<br>午:中式 60<br>晚:梨城風味 80</td><td>山水梨城賓館 / 庫爾勒萬怡酒店 或同級 准5★</td></tr>
+          <tr><td>04</td><td>10/25 庫爾勒 - 庫車</td><td>塔里木胡楊林公園(含區間車)、沙漠胡楊風光<br>車程時間:庫爾勒→(約220KM/4H)胡楊林→(約140KM/3H)庫車</td><td>早:酒店內<br>午:中式 60<br>晚:龜茲風味 80</td><td>庫車迎賓館 准5★<br>0997-7666666</td></tr>
+          <tr><td>05</td><td>10/26 庫車</td><td>天山神秘大峽谷、熱斯坦街(安排下午茶)、庫車大馕城(博物館、打饢體驗、欣賞《杏花龜茲》樂舞表演)</td><td>早:酒店內<br>午:中式 60<br>晚:亞克西姆維族風味 100</td><td>庫車迎賓館 准5★<br>0997-7666666</td></tr>
+          <tr><td>06</td><td>10/27 庫車 - 拜城</td><td>庫車王府、克孜爾千佛洞(含專業講解)<br>車程時間:庫車→(約70KM/1.5H)千佛洞→(約80KM/1.5H)拜城</td><td>早:酒店內<br>午:中式 60<br>晚:拜城風味 80</td><td>拜城尊茂溫州酒店 准5★<br>0997-8818888</td></tr>
+          <tr><td>07</td><td>10/28 拜城 - 阿拉爾</td><td>溫宿大峽谷(含區間車)<br>車程時間:拜城→(約130KM/2H)大峽谷→(約140KM/2H)阿拉爾</td><td>早:酒店內<br>午:中式 60<br>晚:新疆烤包子 80</td><td>阿拉爾塔河花園酒店<br>0997-4678888</td></tr>
+          <tr><td>08</td><td>10/29 阿拉爾 - 和田</td><td>沿第二條沙漠公路穿越塔克拉瑪幹沙漠、沙漠觀景台、沙漠胡楊風光、和田夜市<br>車程時間:阿拉爾→(約440KM/7H)和田</td><td>早:酒店內<br>午:途中 60<br>晚:和田夜市發餐費 100</td><td>和田迎賓館 准5★<br>0903-2965555</td></tr>
+          <tr><td>09</td><td>10/30 和田 - 澤普/莎車</td><td>澤普金胡楊國家森林公園(含區間車)、金色胡楊風光<br>車程時間:和田→(約320KM/5H)金胡楊→(約35KM/1H)澤普</td><td>早:酒店內<br>午:中式 60<br>晚:紅柳烤肉 80</td><td>澤普金胡楊國際酒店 准4★<br>0998-8182666</td></tr>
+          <tr><td>10</td><td>10/31 澤普/莎車 - 巴楚</td><td>莎車喀讚其老街、莎車王陵、巴楚紅海景區(含區間車)、水上胡楊風光</td><td>早:酒店內<br>午:中式 60<br>晚:巴楚烤魚風味 80</td><td>巴楚麗楓酒店 准4★<br>0998-6280888</td></tr>
+          <tr><td>11</td><td>11/01 巴楚 - 喀什</td><td>沿途欣賞戈壁風光、高台民居、香妃園、汗巴扎夜市<br>車程時間:巴楚→(約300KM/4H)喀什</td><td>早:酒店內<br>午:中式 60<br>晚:汗巴扎夜市發餐費 100</td><td>古城逸扉酒店 准5★<br>0998-2218888</td></tr>
+          <tr><td>12</td><td>11/02 喀什 - 烏恰</td><td>喀什古城開城儀式、喀什古城、職人街、彩虹巷、百年老茶館、艾提尕爾清真寺<br>車程時間:喀什→(約100KM/2H)烏恰</td><td>早:酒店內<br>午:中式 60<br>晚:新疆手抓肉 80</td><td>烏恰美豪麗致酒店 准4★<br>0908-7656666</td></tr>
+          <tr><td>13</td><td>11/03 烏恰西極村 - 喀什</td><td>途徑七彩丹霞地貌、貝殼山、烏恰天山昆侖山交匯觀景臺、斯木哈納村(中國西極石碑)</td><td>早:酒店內<br>午:途中 60<br>晚:新疆烤全羊 180</td><td>古城逸扉酒店 准5★<br>0998-2218888</td></tr>
+          <tr><td>14</td><td>11/04 喀什 - 塔什庫爾幹</td><td>蓋孜峽谷風光、中巴友誼公路、卡拉庫里湖、遠眺雪山群、石頭城、金草灘(含電瓶車)</td><td>早:酒店內<br>午:途中 60<br>晚:高原牦牛肉 100</td><td>塔縣全景星空酒店 4★<br>0998-2390000</td></tr>
+          <tr><td>15</td><td>11/05 塔縣</td><td>盤龍古道(換乘7座商務車,5人/車)、班底兒藍湖、托格倫夏村、塔吉克族家訪</td><td>早:酒店內<br>午:途中 60<br>晚:塔吉克風味 80</td><td>塔縣全景星空酒店 4★<br>0998-2390000</td></tr>
+          <tr><td>16</td><td>11/06 塔什庫爾幹 - 喀什</td><td>盤龍古道環線、塔合曼濕地觀景台、布倫口白沙湖、返回喀什</td><td>早:酒店內<br>午:途中 60<br>晚:西域歡送宴 100</td><td>喀什機場亞朵酒店 4★<br>0998-6409999</td></tr>
+          <tr><td>17</td><td>11/07 喀什/北京 CA1216 2045/0145+1</td><td>早餐後參觀喀什博物館，市區自由活動，乘機前往北京。<br>車程時間:喀什市區→(約10KM/0.5H)喀什機場</td><td>早:酒店內<br>午:風味餐 60<br>晚:機上簡餐</td><td>北京國測國際會議會展中心酒店<br>010-50907999</td></tr>
+          <tr><td>18</td><td>11/08 北京/桃園 CA189 1355/1720</td><td>早餐後送機返回台北，結束18天精彩南疆之旅。</td><td>早:酒店內<br>午:機上餐</td><td>溫暖的家</td></tr>
         </tbody>
       </table>
     </div>
@@ -286,153 +288,159 @@ body.light .pdf-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
-/* ========================================================= 
-   APP INITIALIZATION (Maximum Compatibility Version) 
-========================================================= */
 (function() {
   try {
 
-/* ============ DATA ============ */
+/* ============ DATA WITH REVISED ITINERARY & FLIGHT INFO ============ */
 const DAYS = [
-{ id:0, date:"10/22", dow:"Day 1", theme:"啟程：TPE - PEK (轉機) - URC", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 接機簡餐/機上餐 | 機票: 含(內扣25,000)",
+{ id:0, date:"10/22", dow:"Day 1", theme:"啟程：TPE - PEK (轉機) - URC", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 接機簡餐/機上餐 | 機票: 含",
   notices:[
-    "去程航班：TPE 桃園出發，PEK 北京（Layover 中轉），最終抵達 URC 烏魯木齊",
-    "航班 1：CA186 1300/1615 (桃園 TPE → 北京 PEK)",
-    "航班 2：CA1295 1735/2155 (北京 PEK → 烏魯木齊 URC)"
+    "集合時間：115年10月22日 10:30｜桃園機場第二航廈3樓4號櫃檯",
+    "航班 1：CA186 台北桃園 13:00 → 北京 16:15",
+    "航班 2：CA1295 北京 17:35 → 烏魯木齊 21:55",
+    "專車接機前往烏魯木齊市區酒店入住"
   ],
   stops:[
-    {t:"13:00", name:"桃園機場 (TPE) 出發", type:"other", icon:"✈️", coords:[25.0796, 121.2342], wiki:"桃园国际机场", url:"https://www.taoyuan-airport.com", desc:"搭乘 CA186 航班，大約 13:00 從桃園機場出發前往北京。"},
-    {t:"16:15", name:"北京首都機場 (PEK) 轉機", type:"other", icon:"🛫", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"抵達北京作為中轉城市 (Layover)，準備轉搭晚間 17:35 的 CA1295 飛往最終目的地烏魯木齊。"},
-    {t:"21:55", name:"烏魯木齊機場 (URC) 抵達", type:"other", icon:"🛬", coords:[43.9071, 87.4743], wiki:"乌鲁木齐地窝堡国际机场", desc:"晚間抵達烏魯木齊機場，辦理入境與接機手續。"},
-    {t:"22:30", name:"希爾頓花園/歡朋/美豪麗致酒店 (准5星)", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], url:"https://baike.baidu.com/item/乌鲁木齐", desc:"車程時間：烏魯木齊機場→(約20KM)烏魯木齊市區。抵達並辦理入住。"}
+    {t:"10:30", name:"桃園機場二航廈集合", type:"other", icon:"🧳", coords:[25.0796, 121.2342], desc:"桃園國際機場第二航廈3樓4號報到櫃檯集合 (10:30)。"},
+    {t:"13:00", name:"桃園機場 (TPE) 出發", type:"other", icon:"✈️", coords:[25.0796, 121.2342], wiki:"台灣桃園國際機場", desc:"搭乘 CA186 航班，13:00 從桃園機場起飛前往北京。"},
+    {t:"16:15", name:"北京首都機場 (PEK) 抵達轉機", type:"other", icon:"🛫", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"抵達北京首都機場（PEK）轉機，準備轉乘 17:35 的 CA1295 飛往烏魯木齊。"},
+    {t:"17:35", name:"北京首都機場 (PEK) 出發", type:"other", icon:"✈️", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"搭乘 CA1295 航班 17:35 起飛前往新疆首府烏魯木齊。"},
+    {t:"21:55", name:"烏魯木齊機場 (URC) 抵達", type:"other", icon:"🛬", coords:[43.9071, 87.4743], wiki:"乌鲁木齐地窝堡国际机场", desc:"晚間 21:55 抵達烏魯木齊地窩堡國際機場，由當地導遊接機。"},
+    {t:"22:45", name:"希爾頓花園酒店 (准5★)", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], wiki:"乌鲁木齐市", desc:"車程時間：烏魯木齊機場→(約20KM/0.5H)烏魯木齊市區酒店。電話：0991-8756666。"}
   ]},
 { id:1, date:"10/23", dow:"Day 2", theme:"新疆古生態園 · 穿越天山", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100西域迎賓宴)",
-  notices:["今日將穿越世界最長高速公路隧道：天山勝利隧道"],
+  notices:["今日將穿越世界最長高速公路隧道：天山勝利隧道（全長約22.13公里）"],
   stops:[
-    {t:"09:00", name:"出發：烏魯木齊酒店", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：希爾頓花園酒店", type:"hotel", icon:"🏨", coords:[43.8256, 87.6168], desc:"從昨晚入住的酒店出發。"},
     {t:"10:00", name:"新疆古生態園", type:"sight", icon:"🐴", coords:[43.8500, 87.6000], wiki:"阿哈尔捷金马", url:"https://baike.baidu.com/item/新疆古生态园", desc:"參觀侏羅紀硅化木保護基地、野馬美術館與汗血寶馬基地。", sees:["中國規模最大、血統最純正的阿哈爾捷金馬（汗血寶馬）繁育基地", "園內有長達56米的侏羅紀硅化木（樹化石），距今1.95億年至1.3億年"]},
-    {t:"14:00", name:"天山勝利隧道 (途經)", type:"sight", icon:"⛰️", coords:[43.1000, 86.8000], wiki:"天山山脉", desc:"穿越天山勝利隧道。車程時間：烏魯木齊市區→(約330KM)庫爾勒市。"},
-    {t:"18:30", name:"山水梨城賓館 / 庫爾勒萬怡酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"抵達庫爾勒，享用西域迎賓宴並入住酒店。"}
+    {t:"14:00", name:"天山勝利隧道 (途經)", type:"sight", icon:"⛰️", coords:[43.1000, 86.8000], wiki:"天山山脉", desc:"穿越天山勝利隧道。車程時間：烏魯木齊市區→(約330KM/4.5H)庫爾勒市。"},
+    {t:"18:30", name:"山水梨城賓館 / 庫爾勒萬怡酒店 (准5★)", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"抵達庫爾勒，享用西域迎賓宴並入住酒店。"}
   ]},
 { id:2, date:"10/24", dow:"Day 3", theme:"羅布人村寨 · 塔克拉瑪幹沙漠", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80梨城風味)",
   notices:["包含羅布人村寨區間車，並體驗沙漠騎駱駝"],
   stops:[
     {t:"09:00", name:"出發：庫爾勒酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"從昨晚入住的酒店出發。"},
-    {t:"11:00", name:"羅布人村寨", type:"sight", icon:"🐪", coords:[41.1641, 86.2453], wiki:"塔克拉玛干沙漠", url:"https://baike.baidu.com/item/罗布人村寨", desc:"包含區間車。塔克拉瑪幹沙漠風光、沙漠胡楊風光、體驗沙漠騎駱駝、孔雀河風光。車程約 80KM。"},
-    {t:"18:00", name:"山水梨城賓館 / 庫爾勒萬怡酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"返回庫爾勒市區入住。"}
+    {t:"11:00", name:"羅布人村寨 & 塔克拉瑪幹沙漠", type:"sight", icon:"🐪", coords:[41.1641, 86.2453], wiki:"塔克拉玛干沙漠", url:"https://baike.baidu.com/item/罗布人村寨", desc:"包含區間車。塔克拉瑪幹沙漠風光、沙漠胡楊風光、體驗沙漠騎駱駝、孔雀河風光。車程約 80KM/2H。"},
+    {t:"18:00", name:"山水梨城賓館 / 庫爾勒萬怡酒店 (准5★)", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"車程約80KM/2H返回庫爾勒市區入住。"}
   ]},
-{ id:3, date:"10/25", dow:"Day 4", theme:"塔里木胡楊林公園", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80龜茲風味)",
-  notices:["長途拉車前往庫車，車程約220KM+140KM"],
+{ id:3, date:"10/25", dow:"Day 4", theme:"塔里木胡楊林公園 · 龜茲古城", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80龜茲風味)",
+  notices:["長途拉車前往庫車，車程約220KM/4H + 140KM/3H"],
   stops:[
     {t:"09:00", name:"出發：庫爾勒酒店", type:"hotel", icon:"🏨", coords:[41.7641, 86.1453], desc:"從昨晚入住的酒店出發。"},
-    {t:"13:00", name:"塔里木胡楊林公園", type:"sight", icon:"🍂", coords:[41.0500, 84.2500], wiki:"胡杨", url:"https://baike.baidu.com/item/塔里木胡杨林国家森林公园", desc:"包含區間車。欣賞沙漠胡楊風光。"},
-    {t:"18:00", name:"庫車迎賓館/五星樓/希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"車程時間：庫爾勒市→(約220KM)塔里木胡楊林公園→(約140KM)庫車市。"}
+    {t:"13:00", name:"塔里木胡楊林公園", type:"sight", icon:"🍂", coords:[41.0500, 84.2500], wiki:"胡杨", url:"https://baike.baidu.com/item/塔里木胡杨林国家森林公园", desc:"包含區間車。欣賞大漠沙漠胡楊風光。車程時間：庫爾勒市→(約220KM/4H)公園。"},
+    {t:"18:00", name:"庫車迎賓館 (准5★)", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"車程時間：胡楊林→(約140KM/3H)庫車市。電話：0997-7666666。"}
   ]},
 { id:4, date:"10/26", dow:"Day 5", theme:"天山神秘大峽谷 · 龜茲風情", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100亞克西姆維族風味)",
   notices:["今日安排熱斯坦街下午茶，並欣賞《杏花龜茲》樂舞表演"],
   stops:[
-    {t:"09:00", name:"出發：庫車酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
-    {t:"10:30", name:"天山神秘大峽谷", type:"sight", icon:"⛰️", coords:[42.1333, 83.0500], wiki:"库车大峡谷", url:"https://baike.baidu.com/item/库车大峡谷国家地质公园", desc:"車程時間：庫車市→(約70KM)天山神秘大峽谷。"},
+    {t:"09:00", name:"出發：庫車迎賓館", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
+    {t:"10:30", name:"天山神秘大峽谷", type:"sight", icon:"⛰️", coords:[42.1333, 83.0500], wiki:"库车大峡谷", url:"https://baike.baidu.com/item/库车大峡谷国家地质公园", desc:"車程時間：庫車市→(約70KM/1.5H)天山神秘大峽谷。紅褐色壯麗峽谷地貌。"},
     {t:"14:00", name:"熱斯坦街 & 庫車大馕城", type:"sight", icon:"🫓", coords:[41.7100, 82.9300], wiki:"馕", url:"https://baike.baidu.com/item/库车大馕城", desc:"安排下午茶。遊覽大馕城博物館、打饢體驗、欣賞《杏花龜茲》樂舞表演。"},
-    {t:"18:30", name:"庫車迎賓館/五星樓/希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"返回庫車市區入住。"}
+    {t:"18:30", name:"庫車迎賓館 (准5★)", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"返回庫車市區入住。電話：0997-7666666。"}
   ]},
 { id:5, date:"10/27", dow:"Day 6", theme:"克孜爾千佛洞 · 庫車王府", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80拜城風味)",
   notices:["克孜爾千佛洞包含專業講解"],
   stops:[
-    {t:"09:00", name:"出發：庫車酒店", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
-    {t:"09:30", name:"庫車王府", type:"sight", icon:"🏯", coords:[41.7150, 82.9400], wiki:"库车王府", url:"https://baike.baidu.com/item/库车王府", desc:"參觀庫車王府，獨一無二的漢維合璧建築風情。"},
-    {t:"13:00", name:"克孜爾千佛洞", type:"sight", icon:"🗿", coords:[41.8333, 82.5000], wiki:"克孜尔千佛洞", url:"https://baike.baidu.com/item/克孜尔千佛洞", desc:"包含專業講解。車程時間：庫車市→(約70KM)克孜爾千佛洞。", sees:["中國開鑿最早的大型石窟群（約西元3世紀），世界文化遺產", "展示了獨特的龜茲風格壁畫，儘管曾遭受外國探險家的大量割取"]},
-    {t:"17:30", name:"拜城尊茂溫州酒店", type:"hotel", icon:"🏨", coords:[41.7909, 81.8741], desc:"車程時間：克孜爾千佛洞→(約80KM)拜城縣。"}
+    {t:"09:00", name:"出發：庫車迎賓館", type:"hotel", icon:"🏨", coords:[41.7278, 82.9364], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:30", name:"庫車王府", type:"sight", icon:"🏯", coords:[41.7150, 82.9400], wiki:"库车王府", url:"https://baike.baidu.com/item/库车王府", desc:"參觀庫車王府，獨一無二的漢維合璧建築風情與龜茲文化。"},
+    {t:"13:00", name:"克孜爾千佛洞", type:"sight", icon:"🗿", coords:[41.8333, 82.5000], wiki:"克孜尔千佛洞", url:"https://baike.baidu.com/item/克孜尔千佛洞", desc:"包含專業講解。車程時間：庫車市→(約70KM/1.5H)克孜爾千佛洞。", sees:["中國開鑿最早的大型石窟群（約西元3世紀），世界文化遺產", "展示了獨特的龜茲風格壁畫，見證古代絲路文化交流"]},
+    {t:"17:30", name:"拜城尊茂溫州酒店 (准5★)", type:"hotel", icon:"🏨", coords:[41.7909, 81.8741], desc:"車程時間：千佛洞→(約80KM/1.5H)拜城縣。電話：0997-8818888。"}
   ]},
-{ id:6, date:"10/28", dow:"Day 7", theme:"溫宿大峽谷", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80新疆烤包子)",
+{ id:6, date:"10/28", dow:"Day 7", theme:"溫宿大峽谷 · 阿拉爾", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80新疆烤包子)",
   notices:["溫宿大峽谷包含區間車"],
   stops:[
     {t:"09:00", name:"出發：拜城尊茂溫州酒店", type:"hotel", icon:"🏨", coords:[41.7909, 81.8741], desc:"從昨晚入住的酒店出發。"},
-    {t:"11:00", name:"溫宿大峽谷", type:"sight", icon:"🌄", coords:[41.4500, 80.3500], wiki:"温宿大峡谷", url:"https://baike.baidu.com/item/温宿大峡谷", desc:"包含區間車。車程時間：拜城縣→(約130KM)溫宿大峽谷。", sees:["融合丹霞、雅丹、岩鹽喀斯特地貌的「活的地質博物館」", "6號谷「火星地貌」充滿科幻感，彷彿登陸外星表面"]},
-    {t:"16:00", name:"塔河花園/塔河觀瀾/桉漫君悅酒店", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"車程時間：溫宿大峽谷→(約140KM)阿拉爾市。"}
+    {t:"11:00", name:"溫宿大峽谷", type:"sight", icon:"🌄", coords:[41.4500, 80.3500], wiki:"温宿大峡谷", url:"https://baike.baidu.com/item/温宿大峡谷", desc:"包含區間車。車程時間：拜城縣→(約130KM/2H)溫宿大峽谷。", sees:["融合丹霞、雅丹、岩鹽喀斯特地貌的活地質博物館", "天山托木爾大峽谷壯麗紅色岩層"]},
+    {t:"16:00", name:"阿拉爾塔河花園酒店", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"車程時間：溫宿大峽谷→(約140KM/2H)阿拉爾市。電話：0997-4678888。"}
   ]},
-{ id:7, date:"10/29", dow:"Day 8", theme:"第二條沙漠公路 · 和田夜市", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100發餐費)",
-  notices:["長途拉車穿越塔克拉瑪幹沙漠，車程約 440KM"],
+{ id:7, date:"10/29", dow:"Day 8", theme:"第二條沙漠公路 · 和田夜市", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100夜市發餐費)",
+  notices:["長途拉車穿越塔克拉瑪幹沙漠，車程約 440KM/7H"],
   stops:[
-    {t:"09:00", name:"出發：阿拉爾酒店", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：阿拉爾塔河花園酒店", type:"hotel", icon:"🏨", coords:[40.5419, 81.2725], desc:"從昨晚入住的酒店出發。"},
     {t:"10:00", name:"第二條沙漠公路穿越", type:"sight", icon:"🏜️", coords:[38.5000, 80.5000], wiki:"塔里木沙漠公路", desc:"沿第二條沙漠公路穿越塔克拉瑪幹沙漠、沙漠觀景台、沙漠胡楊風光。"},
-    {t:"17:00", name:"和田迎賓館 / 希爾頓歡朋酒店", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"抵達和田市並入住。"},
-    {t:"18:30", name:"和田夜市", type:"food", icon:"🍢", coords:[37.1150, 79.9350], wiki:"和田市", url:"https://baike.baidu.com/item/和田夜市", desc:"晚餐於和田夜市（發餐費100元自理）。"}
+    {t:"17:00", name:"和田迎賓館 (准5★)", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"抵達和田市並入住。電話：0903-2965555。"},
+    {t:"18:30", name:"和田夜市", type:"food", icon:"🍢", coords:[37.1150, 79.9350], wiki:"和田市", url:"https://baike.baidu.com/item/和田夜市", desc:"晚餐於和田夜市（發餐費100元自理，品嚐新疆烤肉烤包子手抓飯）。"}
   ]},
 { id:8, date:"10/30", dow:"Day 9", theme:"澤普金胡楊國家森林公園", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80紅柳烤肉)",
   notices:["金胡楊國家森林公園包含區間車"],
   stops:[
-    {t:"09:00", name:"出發：和田酒店", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"從昨晚入住的酒店出發。"},
-    {t:"14:00", name:"澤普金胡楊國家森林公園", type:"sight", icon:"🌳", coords:[38.1900, 77.2000], wiki:"泽普县", url:"https://baike.baidu.com/item/泽普金湖杨国家森林公园", desc:"包含區間車。欣賞金色胡楊風光。車程時間：和田市→(約320KM)金胡楊國家森林公園。"},
-    {t:"17:00", name:"澤普金胡楊國際/莎車雲上居/亞朵酒店", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"車程時間：公園→(約35KM)澤普縣。入住酒店。"}
+    {t:"09:00", name:"出發：和田迎賓館", type:"hotel", icon:"🏨", coords:[37.1107, 79.9328], desc:"從昨晚入住的酒店出發。"},
+    {t:"14:00", name:"澤普金胡楊國家森林公園", type:"sight", icon:"🌳", coords:[38.1900, 77.2000], wiki:"泽普县", url:"https://baike.baidu.com/item/泽普金湖杨国家森林公园", desc:"包含區間車。葉爾羌河畔金色胡楊風光。車程時間：和田市→(約320KM/5H)金胡楊國家森林公園。"},
+    {t:"17:00", name:"澤普金胡楊國際酒店 (准4★)", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"車程時間：公園→(約35KM/1H)澤普縣。電話：0998-8182666。"}
   ]},
 { id:9, date:"10/31", dow:"Day 10", theme:"莎車老街 · 巴楚紅海", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80巴楚烤魚)",
   notices:["紅海景區包含區間車，欣賞水上胡楊"],
   stops:[
-    {t:"09:00", name:"出發：莎車酒店", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"從昨晚入住的酒店出發。"},
-    {t:"10:00", name:"莎車喀讚其老街 & 莎車王陵", type:"sight", icon:"🕌", coords:[38.4100, 77.2400], wiki:"莎车县", url:"https://baike.baidu.com/item/莎车王陵", desc:"遊覽莎車喀讚其老街、莎車王陵。車程約 30KM。"},
-    {t:"14:30", name:"巴楚紅海景區", type:"sight", icon:"🌊", coords:[39.7600, 78.5000], wiki:"巴楚县", url:"https://baike.baidu.com/item/巴楚红海景区", desc:"包含區間車，水上胡楊風光。車程時間：莎車縣→(約260KM)巴楚縣→(約10KM)紅海景區。"},
-    {t:"18:00", name:"巴楚麗楓 / 全季 / 錦疆酒店", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"入住巴楚縣酒店。"}
+    {t:"09:00", name:"出發：澤普金胡楊國際酒店", type:"hotel", icon:"🏨", coords:[38.1906, 77.2690], desc:"從昨晚入住的酒店出發。"},
+    {t:"10:00", name:"莎車喀讚其老街 & 莎車王陵", type:"sight", icon:"🕌", coords:[38.4100, 77.2400], wiki:"莎车县", url:"https://baike.baidu.com/item/莎车王陵", desc:"遊覽莎車喀讚其老街、莎車王陵(葉爾羌汗國王陵)。車程約 30KM/1H。"},
+    {t:"14:30", name:"巴楚紅海景區", type:"sight", icon:"🌊", coords:[39.7600, 78.5000], wiki:"巴楚县", url:"https://baike.baidu.com/item/巴楚红海景区", desc:"包含區間車，水上胡楊風光。車程時間：莎車縣→(約260KM/3.5H)巴楚縣→(約10KM/0.5H)紅海景區。"},
+    {t:"18:00", name:"巴楚麗楓酒店 (准4★)", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"入住巴楚縣酒店。電話：0998-6280888。"}
   ]},
-{ id:10, date:"11/1", dow:"Day 11", theme:"喀什風情 · 汗巴扎夜市", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100發餐費)",
-  notices:["前往喀什，車程約 300KM"],
+{ id:10, date:"11/01", dow:"Day 11", theme:"戈壁風光 · 喀什古城初見", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100汗巴扎發餐費)",
+  notices:["巴楚前往喀什市區，車程約 300KM/4H"],
   stops:[
-    {t:"09:00", name:"出發：巴楚酒店", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"從昨晚入住的酒店出發。"},
+    {t:"09:00", name:"出發：巴楚麗楓酒店", type:"hotel", icon:"🏨", coords:[39.7645, 78.5630], desc:"從昨晚入住的酒店出發。"},
     {t:"14:00", name:"高台民居 & 香妃園", type:"sight", icon:"🏘️", coords:[39.4704, 75.9898], wiki:"香妃墓", url:"https://baike.baidu.com/item/香妃园", desc:"沿途欣賞戈壁風光，遊覽高台民居、香妃園。"},
-    {t:"17:30", name:"古城逸扉 / 東城假日 / 希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"入住喀什市區酒店。"},
+    {t:"17:30", name:"古城逸扉酒店 (准5★)", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"入住喀什市區酒店。電話：0998-2218888。"},
     {t:"18:30", name:"汗巴扎夜市", type:"food", icon:"🍢", coords:[39.4720, 75.9850], wiki:"喀什市", desc:"晚餐於汗巴扎夜市（發餐費100元自理）。"}
   ]},
-{ id:11, date:"11/2", dow:"Day 12", theme:"喀什古城 · 百年老茶館", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80新疆手抓肉)",
-  notices:["欣賞喀什古城開城儀式"],
+{ id:11, date:"11/02", dow:"Day 12", theme:"喀什古城 · 百年老茶館 · 烏恰", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥80新疆手抓肉)",
+  notices:["欣賞喀什古城開城儀式，下午前往烏恰縣"],
   stops:[
-    {t:"09:00", name:"出發：喀什酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
-    {t:"10:00", name:"喀什古城", type:"sight", icon:"🏰", coords:[39.4704, 75.9898], wiki:"喀什老城", url:"https://baike.baidu.com/item/喀什古城", desc:"喀什古城開城儀式、喀什古城、職人街、彩虹巷、百年老茶館、艾提尕爾清真寺。"},
-    {t:"17:30", name:"美豪麗致酒店 / 維也納酒店", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"車程時間：喀什市區→(車程約100KM)烏恰縣。入住酒店。"}
+    {t:"09:00", name:"出發：古城逸扉酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
+    {t:"10:00", name:"喀什古城 & 艾提尕爾清真寺", type:"sight", icon:"🏰", coords:[39.4704, 75.9898], wiki:"喀什老城", url:"https://baike.baidu.com/item/喀什古城", desc:"喀什古城開城儀式、職人街、彩虹巷、百年老茶館、艾提尕爾清真寺。"},
+    {t:"17:30", name:"烏恰美豪麗致酒店 (准4★)", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"車程時間：喀什市區→(車程約100KM/2H)烏恰縣。電話：0908-7656666。"}
   ]},
-{ id:12, date:"11/3", dow:"Day 13", theme:"中國西極 · 斯木哈納村", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥180新疆烤全羊)",
-  notices:["造訪中國西極石碑"],
+{ id:12, date:"11/03", dow:"Day 13", theme:"七彩丹霞 · 中國西極石碑", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥180新疆烤全羊)",
+  notices:["造訪中國西極石碑，送走祖國最後一縷陽光"],
   stops:[
-    {t:"09:00", name:"出發：烏恰酒店", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"從昨晚入住的酒店出發。"},
-    {t:"12:00", name:"七彩丹霞與西極石碑", type:"sight", icon:"🏔️", coords:[39.7500, 74.0000], wiki:"伊尔克什坦", url:"https://baike.baidu.com/item/斯木哈纳村", desc:"途徑七彩丹霞地貌、貝殼山、烏恰天山昆侖山交匯地貌觀景臺、沿途遠眺昆崙山、斯木哈納村-中國西極石碑。車程時間：烏恰縣→(車程約140KM)斯木哈納村。"},
-    {t:"17:30", name:"古城逸扉 / 希爾頓歡朋 / 希爾頓惠庭酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"車程時間：斯木哈納村→(車程約240KM)喀什市區。入住酒店。"}
+    {t:"09:00", name:"出發：烏恰美豪麗致酒店", type:"hotel", icon:"🏨", coords:[39.7139, 75.2570], desc:"從昨晚入住的酒店出發。"},
+    {t:"12:00", name:"七彩丹霞與西極石碑", type:"sight", icon:"🏔️", coords:[39.7500, 74.0000], wiki:"伊尔克什坦", url:"https://baike.baidu.com/item/斯木哈纳村", desc:"途徑七彩丹霞地貌、貝殼山、烏恰天山昆侖山交匯地貌觀景臺、斯木哈納村-中國西極石碑。車程：烏恰→(約140KM/3H)西極村。"},
+    {t:"17:30", name:"古城逸扉酒店 (准5★)", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"車程時間：斯木哈納村→(車程約240KM/4.5H)喀什市區。電話：0998-2218888。"}
   ]},
-{ id:13, date:"11/4", dow:"Day 14", theme:"帕米爾高原 · 卡拉庫里湖", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100高原牦牛肉)",
-  notices:["金草灘濕地公園包含電瓶車"],
+{ id:13, date:"11/04", dow:"Day 14", theme:"帕米爾高原 · 卡拉庫里湖 · 石頭城", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100高原牦牛肉)",
+  notices:["金草灘濕地公園包含電瓶車，注意高原海拔防護"],
   stops:[
-    {t:"09:00", name:"出發：喀什酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
-    {t:"13:00", name:"卡拉庫里湖 & 中巴友誼公路", type:"sight", icon:"🏞️", coords:[38.4333, 75.0500], wiki:"喀拉库勒湖", url:"https://baike.baidu.com/item/喀拉库勒湖", desc:"蓋孜峽谷風光、中巴友誼公路、卡拉庫里湖、遠眺帕米爾高原雪山群。車程約 180KM。"},
-    {t:"15:30", name:"石頭城 & 金草灘", type:"sight", icon:"🏰", coords:[37.7700, 75.2200], wiki:"石头城 (塔什库尔干)", url:"https://baike.baidu.com/item/塔什库尔干石头城", desc:"石頭城、金草灘濕地公園(含電瓶車)。車程約 100KM。"},
-    {t:"17:30", name:"塔縣般藍酒店 / 全景星空酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"入住塔什庫爾幹酒店。"}
+    {t:"09:00", name:"出發：古城逸扉酒店", type:"hotel", icon:"🏨", coords:[39.4750, 75.9900], desc:"從昨晚入住的酒店出發。"},
+    {t:"13:00", name:"卡拉庫里湖 & 中巴友誼公路", type:"sight", icon:"🏞️", coords:[38.4333, 75.0500], wiki:"喀拉库勒湖", url:"https://baike.baidu.com/item/喀拉库勒湖", desc:"蓋孜峽谷風光、中巴友誼公路、卡拉庫里湖遠眺慕士塔格峰。車程約 180KM/4H。"},
+    {t:"15:30", name:"石頭城 & 金草灘", type:"sight", icon:"🏰", coords:[37.7700, 75.2200], wiki:"石头城 (塔什库尔干)", url:"https://baike.baidu.com/item/塔什库尔干石头城", desc:"石頭城、金草灘濕地公園(含電瓶車)。車程約 100KM/2H。"},
+    {t:"17:30", name:"塔縣全景星空酒店 (4★)", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"入住塔什庫爾幹。車程約1.5KM/10MIN。電話：0998-2390000。"}
   ]},
-{ id:14, date:"11/5", dow:"Day 15", theme:"盤龍古道 · 塔吉克家訪", budget:"住宿: 團費含 | 交通: 團費含(換商務車) | 餐食: 早(含) 午(¥60) 晚(¥80塔吉克風味)",
+{ id:14, date:"11/05", dow:"Day 15", theme:"盤龍古道 · 班迪爾藍湖 · 塔吉克家訪", budget:"住宿: 團費含 | 交通: 團費含(換商務車) | 餐食: 早(含) 午(¥60) 晚(¥80塔吉克風味)",
   notices:["盤龍古道需換乘7座商務車(5人/車)"],
   stops:[
-    {t:"09:00", name:"出發：塔縣酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
-    {t:"10:30", name:"盤龍古道", type:"sight", icon:"🛣️", coords:[37.6000, 75.3000], wiki:"塔什库尔干塔吉克自治县", url:"https://baike.baidu.com/item/盘龙古道", desc:"盤龍古道(換乘7座商務車，5人/車)、班底兒藍湖。", sees:["橫臥於帕米爾高原的史詩天路，海拔超4,000米", "30公里路段包含600多個「九曲十八彎」的S形彎道", "標誌性路牌：「今日走過了所有的彎路，從此人生盡是坦途」"]},
-    {t:"14:00", name:"塔吉克族家訪", type:"sight", icon:"🛖", coords:[37.7000, 75.2500], desc:"托格倫夏村、塔吉克族家訪。"},
-    {t:"17:30", name:"塔縣般藍酒店 / 全景星空酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"結束盤龍古道環線返回酒店。"}
+    {t:"09:00", name:"出發：塔縣全景星空酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
+    {t:"10:30", name:"盤龍古道 & 班迪爾藍湖", type:"sight", icon:"🛣️", coords:[37.6000, 75.3000], wiki:"塔什库尔干塔吉克自治县", url:"https://baike.baidu.com/item/盘龙古道", desc:"盤龍古道(換乘7座商務車，5人/車)、班底兒藍湖。", sees:["橫臥於帕米爾高原的史詩天路，海拔超4,000米", "30公里路段包含600多個S形彎道與髮夾彎", "標誌性路牌：「今日走過了所有的彎路，從此人生盡是坦途」"]},
+    {t:"14:00", name:"托格倫夏村 & 塔吉克族家訪", type:"sight", icon:"🛖", coords:[37.7000, 75.2500], desc:"托格倫夏村、走訪塔吉克族家庭，品嚐奶茶與小吃。"},
+    {t:"17:30", name:"塔縣全景星空酒店 (4★)", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"返回塔縣酒店。電話：0998-2390000。"}
   ]},
-{ id:15, date:"11/6", dow:"Day 16", theme:"白沙湖 · 返回喀什", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100西域歡送宴)",
-  notices:["車程返回喀什市區"],
+{ id:15, date:"11/06", dow:"Day 16", theme:"白沙湖 · 返回喀什", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60) 晚(¥100西域歡送宴)",
+  notices:["盤龍古道環線、白沙湖，車程返回喀什市區"],
   stops:[
-    {t:"09:00", name:"出發：塔縣酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
-    {t:"11:00", name:"塔合曼濕地 & 布倫口白沙湖", type:"sight", icon:"🌊", coords:[38.7500, 74.8500], wiki:"布伦口水库", url:"https://baike.baidu.com/item/白沙山-白沙湖景区", desc:"塔合曼濕地觀景台、布倫口白沙湖。車程時間：塔什庫爾幹→(約130KM)布倫口白沙湖。"},
-    {t:"17:30", name:"喀什機場亞朵酒店", type:"hotel", icon:"🏨", coords:[39.5300, 76.0200], desc:"車程時間：白沙湖→(約150KM)喀什市區。入住酒店。"}
+    {t:"09:00", name:"出發：塔縣全景星空酒店", type:"hotel", icon:"🏨", coords:[37.7719, 75.2227], desc:"從昨晚入住的酒店出發。"},
+    {t:"11:00", name:"塔合曼濕地 & 布倫口白沙湖", type:"sight", icon:"🌊", coords:[38.7500, 74.8500], wiki:"布伦口水库", url:"https://baike.baidu.com/item/白沙山-白沙湖景区", desc:"塔合曼濕地觀景台、布倫口白沙湖。車程：塔縣→(約130KM/2H)布倫口白沙湖。"},
+    {t:"17:30", name:"喀什機場亞朵酒店 (4★)", type:"hotel", icon:"🏨", coords:[39.5300, 76.0200], desc:"車程時間：白沙湖→(約150KM/3.5H)喀什市區。電話：0998-6409999。"}
   ]},
-{ id:16, date:"11/7", dow:"Day 17", theme:"喀什飛往北京", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(風味餐) 晚(風味餐)",
-  notices:["航班：CA1216 2045/0145+1 飛往北京", "上午喀什市區自由活動"],
+{ id:16, date:"11/07", dow:"Day 17", theme:"喀什博物館 · 飛往北京", budget:"住宿: 團費含 | 交通: 團費含 | 餐食: 早(含) 午(¥60風味餐) 晚(機上簡餐)",
+  notices:[
+    "第一頁官方航班：CA1216 喀什 20:45 → 北京 01:45+1",
+    "上午參觀喀什博物館，市區自由活動"
+  ],
   stops:[
-    {t:"09:00", name:"喀什市區自由活動", type:"sight", icon:"🏙️", coords:[39.4750, 75.9900], desc:"早餐後於喀什市區自由活動，整理行李並採買伴手禮。"},
-    {t:"18:00", name:"喀什機場 (KSZ) 出發", type:"other", icon:"✈️", coords:[39.5422, 76.0197], desc:"乘機前往北京（搭乘航班 CA1216）。車程時間：喀什市區→(約10KM)喀什機場。"},
-    {t:"01:45", name:"北京首都機場 (PEK) 抵達", type:"other", icon:"🛬", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"隔日凌晨 01:45 抵達北京。"},
-    {t:"02:30", name:"北京機場附近酒店", type:"hotel", icon:"🏨", coords:[40.0800, 116.6000], desc:"入住機場附近酒店。"}
+    {t:"09:30", name:"喀什博物館", type:"sight", icon:"🏛️", coords:[39.4890, 75.9860], wiki:"喀什地区博物馆", desc:"參觀喀什博物館，展示絲路綠洲文明與當地歷史脈絡，並於市區自由活動整理行李。"},
+    {t:"18:30", name:"喀什機場 (KSZ) 出發", type:"other", icon:"✈️", coords:[39.5422, 76.0197], wiki:"喀什徕宁国际机场", desc:"車程時間：喀什市區→(約10KM/0.5H)喀什機場。搭乘 CA1216 20:45 起飛。"},
+    {t:"01:45", name:"北京首都機場 (PEK) 抵達", type:"other", icon:"🛬", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"隔日凌晨 01:45 抵達北京首都國際機場。"},
+    {t:"02:30", name:"北京國測國際會議會展中心酒店", type:"hotel", icon:"🏨", coords:[40.0382, 116.6438], desc:"入住北京機場附近國測會展中心酒店。電話：010-50907999。"}
   ]},
-{ id:17, date:"11/8", dow:"Day 18", theme:"北京返回台北", budget:"住宿: 無 | 交通: 團費含 | 餐食: 早(含) 午(機上餐)",
-  notices:["航班：CA189 1355/1720 返回台北"],
+{ id:17, date:"11/08", dow:"Day 18", theme:"北京返回台北", budget:"住宿: 無 | 交通: 團費含 | 餐食: 早(含) 午(機上餐)",
+  notices:[
+    "第一頁官方航班：CA189 北京 13:55 → 台北桃園 17:20",
+    "早餐後送機返回台北，圓滿結束行程"
+  ],
   stops:[
-    {t:"10:00", name:"出發：北京機場附近酒店", type:"hotel", icon:"🏨", coords:[40.0800, 116.6000], desc:"從昨晚入住的酒店出發。"},
-    {t:"13:55", name:"北京首都機場 (PEK) 出發", type:"other", icon:"🛫", coords:[40.0799, 116.6031], desc:"搭乘 CA189 1355/1720 準備返回台北。"},
-    {t:"17:20", name:"桃園機場 (TPE) 抵達", type:"other", icon:"🛬", coords:[25.0796, 121.2342], wiki:"桃园国际机场", desc:"抵達台北，行程圓滿結束。"}
+    {t:"10:30", name:"出發：北京國測會展中心酒店", type:"hotel", icon:"🏨", coords:[40.0382, 116.6438], desc:"享用飯店早餐後整理行李，專車送往北京首都國際機場。"},
+    {t:"13:55", name:"北京首都機場 (PEK) 出發", type:"other", icon:"🛫", coords:[40.0799, 116.6031], wiki:"北京首都国际机场", desc:"搭乘 CA189 航班 13:55 自北京首都國際機場起飛。"},
+    {t:"17:20", name:"桃園機場 (TPE) 抵達", type:"other", icon:"🛬", coords:[25.0796, 121.2342], wiki:"台灣桃園國際機場", desc:"下午 17:20 抵達台北桃園國際機場第二航廈，結束18天南疆深度之旅。"}
   ]}
 ];
 
@@ -490,7 +498,6 @@ function stopsForDay(d){
       var effDay = (ov.day===undefined)?di:ov.day;
       if(effDay!==d) return;
       
-      // ES5 compatible object merging
       var newStop = Object.assign({}, s);
       newStop.t = ov.t || s.t;
       newStop.movedDay = (ov.day !== undefined && ov.day !== di);
@@ -784,7 +791,7 @@ function renderList(){
   if(d.notices && !filterHotelsOnly) d.notices.forEach(function(n) { html += "<div class=\"notice\">" + n + "</div>"; });
 
   if(stops.length === 0) {
-      html += "<div class=\"notice\">此日無相符的資料。</div>";
+      html += "<div class=\"notice\">此日無相符的住宿或項目。</div>";
   }
 
   stops.forEach(function(s,idx){
@@ -815,11 +822,13 @@ function renderList(){
     var linkHtml = "<a href=\"" + amap + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">高德地圖</a>" +
                    "<a href=\"" + gmap + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">Google 地圖</a>";
     if(s.url) linkHtml += "<a href=\"" + s.url + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">" + (s.urlLabel||"參考網址") + "</a>";
-    if(!s.url && s.wiki) linkHtml += "<a href=\"https://zh.wikipedia.org/wiki/" + encodeURIComponent(s.wiki) + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">維基介紹</a>";
+    if(!s.url && s.wiki) linkHtml += "<a href=\"https://zh.wikipedia.org/wiki/" + encodeURIComponent(s.wiki) + "\" target=\"_blank\" onclick=\"event.stopPropagation()\">維基百科真實資料</a>";
     
+    var thumbContent = s.imgUrl ? "<img src=\"" + s.imgUrl + "\" alt=\"" + s.name + "\">" : (s.icon || "📍");
+
     html += "<div class=\"card\" id=\"card" + idx + "\" onclick=\"focusStop(" + idx + ")\">" +
       "<div class=\"cardTop\">" +
-        "<div class=\"thumb\" id=\"thumb" + idx + "\">" + (s.icon||"📍") + "</div>" +
+        "<div class=\"thumb\" id=\"thumb" + idx + "\">" + thumbContent + "</div>" +
         "<div class=\"cbody\">" +
           rightBtns +
           "<div class=\"crow1\"><span class=\"num " + cls + "\">" + (idx+1) + "</span>" +
@@ -863,7 +872,7 @@ function renderList(){
   });
   left.innerHTML = html;
   left.scrollTop = 0;
-  stops.forEach(function(s,idx) { loadImage(s, idx); });
+  stops.forEach(function(s,idx) { if(!s.imgUrl) loadImage(s, idx); });
 }
 
 function renderArchive(){
@@ -878,9 +887,11 @@ function renderArchive(){
     if(s.price) tags += "<span class=\"tag price\">💴 " + s.price + "</span>";
     if(s.hours) tags += "<span class=\"tag hours\">🕐 " + s.hours + "</span>";
     
+    var thumbContent = s.imgUrl ? "<img src=\"" + s.imgUrl + "\" alt=\"" + s.name + "\">" : (s.icon || "📍");
+
     html += "<div class=\"card\" id=\"card" + idx + "\" onclick=\"focusStop(" + idx + ")\">" +
       "<div class=\"cardTop\">" +
-        "<div class=\"thumb\" id=\"thumb" + idx + "\">" + (s.icon||"📍") + "</div>" +
+        "<div class=\"thumb\" id=\"thumb" + idx + "\">" + thumbContent + "</div>" +
         "<div class=\"cbody\">" +
           "<button class=\"delBtn\" style=\"float:right;border-color:var(--green);color:var(--green)\" onclick=\"event.stopPropagation();restoreBuiltin('" + s.bid + "')\">↩ 還原</button>" +
           "<div class=\"crow1\"><span class=\"cname\">" + s.name + "</span></div>" +
@@ -892,9 +903,10 @@ function renderArchive(){
   });
   left.innerHTML = html;
   left.scrollTop = 0;
-  items.forEach(function(s,idx){ loadImage(s, idx); });
+  items.forEach(function(s,idx){ if(!s.imgUrl) loadImage(s, idx); });
 }
 
+/* Genuine Wikimedia REST API Image Fetcher */
 async function loadImage(s, idx){
   if(!s.wiki && !s.imgUrl) return;
   var key = s.imgUrl || s.wiki;
@@ -905,13 +917,13 @@ async function loadImage(s, idx){
       var r = await fetch("https://zh.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(s.wiki));
       if(!r.ok) throw 0;
       var j = await r.json();
-      src = (j.thumbnail&&j.thumbnail.source)||(j.originalimage&&j.originalimage.source);
+      src = (j.thumbnail && j.thumbnail.source) || (j.originalimage && j.originalimage.source);
       if(!src) throw 0;
       imgCache[key]=src;
     }catch(e){ imgCache[key]=false; return; }
   }
   var el = document.getElementById("thumb"+idx);
-  if(el){
+  if(el && src){
     var img = new Image();
     img.onload = function(){ el.innerHTML=""; el.appendChild(img); };
     img.src = src;
@@ -993,7 +1005,7 @@ function highlightCard(idx){
   if(el){ el.classList.add("focus"); el.scrollIntoView({behavior:"smooth", block:"nearest"}); }
 }
 
-/* ============ ADD / EDIT ACTIVITY (with select time logic) ============ */
+/* ============ ADD / EDIT ACTIVITY ============ */
 var modal = document.getElementById("modal");
 var editCid = null, editBid = null;
 
@@ -1132,7 +1144,6 @@ var mCancel = document.getElementById("mCancel");
 if(mCancel) mCancel.onclick = function(){ if(modal) modal.classList.remove("open"); };
 if(modal) modal.onclick = function(e){ if(e.target===modal) modal.classList.remove("open"); };
 
-/* Open Original PDF Text Modal */
 var origBtn = document.getElementById("origBtn");
 var pdfModal = document.getElementById("pdfModal");
 var pdfClose = document.getElementById("pdfClose");
@@ -1213,7 +1224,7 @@ if(mSaveBtn) {
       
       if(status) {
           if(coords){ status.textContent = "💾 儲存中…"; }
-          else { status.textContent = "🔍 正在查詢座標與資料…"; }
+          else { status.textContent = "🔍 正在查詢座標與真實維基資料…"; }
       }
       
       var autoHours="", autoFee="", autoUrl="", autoSees=null;
@@ -1349,7 +1360,7 @@ window.removeCustom = function(cid){
 /* ============ BOOT APP ============ */
 initMap();
 applyTheme();
-selectDay("global"); // Start with Global View by default
+selectDay("global");
 
   } catch (err) {
       console.error("FATAL APP ERROR:", err);
@@ -1357,7 +1368,7 @@ selectDay("global"); // Start with Global View by default
       if (leftPanel) {
           leftPanel.innerHTML = "<div style=\"padding: 20px; background: #2a1111; border-radius: 10px; border: 1px solid #c84b4b; color: #e9e7e0; margin: 15px;\">" +
               "<h2 style=\"color: #c84b4b; margin-bottom: 10px;\">⚠️ 程式發生錯誤 (App Error)</h2>" +
-              "<p style=\"font-size: 0.9rem; margin-bottom: 15px;\">很抱歉，應用程式在讀取您的資料時遇到了衝突。這通常是因為舊版儲存資料不相容所導致。</p>" +
+              "<p style=\"font-size: 0.9rem; margin-bottom: 15px;\">很抱歉，應用程式在讀取您的資料時遇到了衝突。</p>" +
               "<div style=\"background: #161922; padding: 12px; border-radius: 6px; margin-bottom: 15px; font-family: monospace; font-size: 0.8rem; overflow-x: auto; color: #9aa0ad;\">" +
                   err.message + "<br><br>" + err.stack +
               "</div>" +
